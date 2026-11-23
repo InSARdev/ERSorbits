@@ -21,6 +21,12 @@ day boundaries between periods, and a set takes over on its first whole day. Pro
 DORIS = the P<publish time> of its name, PRC rev2 = 1995-03-24 (PRC_PRODUCED, below). Days no source covers are gaps. The build log
 (CACHE_DIR/build_log.txt) and CACHE_DIR/summary.json list the kept and dropped arcs, the gaps, the number of days of each
 kind, and the days no set covers whole with the stretches their set leaves open.
+
+Fixes (README "Fixes"), two curated inputs versioned with this script:
+- fixes.csv: OVERRIDE days. On such a day the listed set wins the day in place of the set the rule above chooses (the row's
+  `replaces`); the build stops when that set no longer covers the whole day or the rule no longer chooses `replaces`.
+- no_orbit_spans.csv: NO_ORBIT spans (UTC) where no set is confirmed by a second producer. The build writes them, sorted, to
+  <SATELLITE>/no_orbit.csv (columns start,end,reason); a downloader refuses a scene whose orbit window overlaps one.
 """
 import argparse
 import bisect
@@ -104,6 +110,12 @@ TFMT = '%Y-%m-%dT%H:%M:%S'
 # "Altimeter and Orbit Global Products Manual" ERS-D-GPM-31200 (GFZ), its product history and PRC product sections,
 # https://earth.esa.int/eogateway/documents/20142/37627/ERS-Altimeter-and-Orbit-Global-Products-Manual.pdf
 PRC_PRODUCED = dt.datetime(1995, 3, 24)
+# the curated fixes (README "Fixes")
+FIXES = os.path.join(REPO, 'fixes.csv')
+FIXES_COLUMNS = ('satellite', 'day', 'set', 'replaces', 'evidence', 'reason')
+NO_ORBIT_SPANS = os.path.join(REPO, 'no_orbit_spans.csv')
+NO_ORBIT_SPANS_COLUMNS = ('satellite', 'start', 'end', 'served', 'evidence', 'reason')
+NO_ORBIT = 'no_orbit.csv'
 
 LOG = []
 
@@ -432,6 +444,55 @@ def read_original(arc):
         return inner.read(member)
 
 
+# ------------------------------------------------------------------------------------------------------------------ fixes
+def read_csv(path, columns):
+    with open(path, newline='', encoding='utf-8') as fh:
+        reader = csv.DictReader(fh)
+        if tuple(reader.fieldnames or ()) != columns:
+            raise ValueError(f'{os.path.basename(path)}: header {reader.fieldnames}, expected {",".join(columns)}')
+        return list(reader)
+
+
+def read_fixes(path=FIXES):
+    """OVERRIDE days of fixes.csv: (satellite, date) -> row; the day goes to row['set'] in place of row['replaces']."""
+    fixes = {}
+    for row in read_csv(path, FIXES_COLUMNS):
+        day = dt.date.fromisoformat(row['day'])
+        if row['satellite'] not in SATELLITES or row['set'] not in SET_MODEL or row['replaces'] not in SET_MODEL:
+            raise ValueError(f'fixes.csv: unknown satellite or set in {row["satellite"]} {row["day"]}')
+        if (row['satellite'], day) in fixes:
+            raise ValueError(f'fixes.csv: {row["satellite"]} {row["day"]} listed twice')
+        fixes[(row['satellite'], day)] = row
+    return fixes
+
+
+def read_no_orbit_spans(path=NO_ORBIT_SPANS):
+    """NO_ORBIT spans of no_orbit_spans.csv per satellite: sorted (start, end, reason), start < end, no two overlapping."""
+    spans = {sat: [] for sat in SATELLITES}
+    for row in read_csv(path, NO_ORBIT_SPANS_COLUMNS):
+        if row['satellite'] not in SATELLITES:
+            raise ValueError(f'no_orbit_spans.csv: unknown satellite {row["satellite"]}')
+        start, end = dt.datetime.strptime(row['start'], TFMT), dt.datetime.strptime(row['end'], TFMT)
+        if not start < end or not row['reason']:
+            raise ValueError(f'no_orbit_spans.csv: {row["satellite"]} {row["start"]}..{row["end"]}: empty span or no reason')
+        spans[row['satellite']].append((start, end, row['reason']))
+    for sat, rows in spans.items():
+        rows.sort()
+        for (s0, e0, _), (s1, e1, _) in zip(rows, rows[1:]):
+            if s1 < e0:
+                raise ValueError(f'no_orbit_spans.csv: {sat} {s0:{TFMT}}..{e0:{TFMT}} overlaps {s1:{TFMT}}..{e1:{TFMT}}')
+    return spans
+
+
+def no_orbit_csv(rows):
+    buf = io.StringIO()
+    w = csv.writer(buf, lineterminator='\n')
+    w.writerow(('start', 'end', 'reason'))
+    for start, end, reason in rows:
+        w.writerow([f'{start:{TFMT}}', f'{end:{TFMT}}', reason])
+    return buf.getvalue().encode()
+
+
 # ------------------------------------------------------------------------------------------------------------------ selection
 def days_of(arc):
     """UTC days the arc covers any part of."""
@@ -443,8 +504,10 @@ def days_of(arc):
     return out
 
 
-def select(arcs):
-    """Return kept arcs, dropped arcs (with reasons) and gap days, per satellite."""
+def select(arcs, fixes=None):
+    """Return kept arcs, dropped arcs (with reasons) and gap days, per satellite. fixes: the OVERRIDE days (read_fixes); on
+    such a day the fix's set wins in place of the rule's choice."""
+    fixes = fixes or {}
     result = {}
     for sat in SATELLITES:
         mine = [a for a in arcs if a['sat'] == sat]
@@ -470,6 +533,7 @@ def select(arcs):
             a['won'] = []
         partial = []
         daykind = {}
+        overridden = []
         for d, cands in sorted(byday.items()):
             day0 = dt.datetime.combine(d, dt.time())
             day1 = day0 + dt.timedelta(days=1)
@@ -482,6 +546,14 @@ def select(arcs):
             whole = [s for s, v in sets.items()
                      if not subtract([(day0, day1)], [(max(a['start'], day0), min(a['end'], day1)) for a in v])]
             winner = max(whole or sets, key=lambda s: rank[s])
+            fix = fixes.get((sat, d))
+            if fix is not None:
+                # an OVERRIDE day: the fix's set wins in place of the rule's choice, which must still be the set it replaces
+                if fix['replaces'] != winner or fix['set'] not in whole:
+                    raise ValueError(f'fixes.csv {sat} {d}: the rule chooses {winner}, the fix replaces {fix["replaces"]}; '
+                                     f'sets covering the day whole: {", ".join(sorted(whole)) or "none"}')
+                winner = fix['set']
+                overridden.append((d, fix['replaces'], winner))
             daykind[d] = 'whole' if whole else 'partial'
             for a in cands:
                 if a['set'] == winner:
@@ -511,8 +583,11 @@ def select(arcs):
                 d += dt.timedelta(days=1)
         else:
             gaps = []
+        unused = sorted(d for s, d in fixes if s == sat and d not in byday)
+        if unused:
+            raise ValueError(f'fixes.csv {sat}: no arc covers {", ".join(map(str, unused))}')
         result[sat] = {'kept': kept, 'dropped': sorted(dropped, key=lambda a: (a['start'], a['set'], a['name'])), 'gaps': gaps,
-                       'holes': holes(live), 'partial': partial, 'daykind': daykind}
+                       'holes': holes(live), 'partial': partial, 'daykind': daykind, 'overridden': overridden}
     return result
 
 
@@ -597,10 +672,13 @@ def index_csv(rows):
     return buf.getvalue().encode()
 
 
-def write_tree(result):
+def write_tree(result, no_orbit):
     produced_files = set()
     nwritten = 0
     for sat, r in result.items():
+        p = f'{sat}/{NO_ORBIT}'
+        nwritten += write_if_changed(os.path.join(REPO, p), no_orbit_csv(no_orbit[sat]))
+        produced_files.add(p)
         days = {}
         for a in r['kept']:
             a['path'] = f'{sat}/{a["start"]:%Y/%m/%d}/{a["zip"]}'
@@ -629,15 +707,22 @@ def write_tree(result):
         log(f'  stale (not produced by this build): {s}')
 
 
-def report(result, cache):
+def report(result, cache, no_orbit):
     summary = {}
     for sat, r in result.items():
         log(f'== {sat}')
+        log(f'  OVERRIDE days (fixes.csv): {len(r["overridden"])}')
+        for d, old, new in r['overridden']:
+            log(f'    override {d}: {new} in place of {old}')
+        hours = sum((e - s).total_seconds() for s, e, _ in no_orbit[sat]) / 3600
+        log(f'  NO_ORBIT spans (no_orbit_spans.csv -> {sat}/{NO_ORBIT}): {len(no_orbit[sat])}, {hours:.2f} h')
         sets = sorted({a['set'] for a in r['kept'] + r['dropped']})
         summary[sat] = {'sets': {}, 'gaps': [[f'{a}', f'{b}'] for a, b in ranges(r['gaps'])],
                         'holes': [[f'{a:{TFMT}}', f'{b:{TFMT}}'] for a, b in r['holes']],
                         'partial': [{'start': f'{p["start"]:{TFMT}}', 'end': f'{p["end"]:{TFMT}}', 'winner': p['winner'],
-                                     'other_sets': p['other_sets'], 'other_arcs': p['other_arcs']} for p in r['partial']]}
+                                     'other_sets': p['other_sets'], 'other_arcs': p['other_arcs']} for p in r['partial']],
+                        'overrides': [[f'{d}', new, old] for d, old, new in r['overridden']],
+                        'no_orbit': {'spans': len(no_orbit[sat]), 'hours': round(hours, 2)}}
         for s in sets:
             k = [a for a in r['kept'] if a['set'] == s]
             dr = [a for a in r['dropped'] if a['set'] == s]
@@ -692,11 +777,12 @@ def main():
         if args.sources in ('all', 'step'):
             download_step(cache)
     if not args.download_only:
+        fixes, no_orbit = read_fixes(), read_no_orbit_spans()
         arcs = delft_arcs(cache) + step_arcs(cache)
-        log(f'arcs read: {len(arcs)}')
-        result = select(arcs)
-        report(result, cache)
-        write_tree(result)
+        log(f'arcs read: {len(arcs)}; fixes: {len(fixes)} OVERRIDE days, {sum(map(len, no_orbit.values()))} NO_ORBIT spans')
+        result = select(arcs, fixes)
+        report(result, cache, no_orbit)
+        write_tree(result, no_orbit)
     log(f'done in {time.time() - t0:.0f} s')
     with open(os.path.join(cache, 'build_log.txt'), 'w') as fh:
         fh.write('\n'.join(LOG) + '\n')
