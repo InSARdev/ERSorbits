@@ -1,515 +1,433 @@
 start,end,reason
-1991-08-24T21:20:00,1991-08-24T22:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
-1991-08-28T12:40:00,1991-08-28T13:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1991-08-28T14:20:00,1991-08-28T15:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1991-08-28T15:50:00,1991-08-28T16:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
-1991-08-28T17:30:00,1991-08-28T18:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
-1991-08-28T19:10:00,1991-08-28T20:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
-1991-08-28T20:50:00,1991-08-28T21:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
-1991-08-28T22:30:00,1991-08-28T23:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
-1991-08-29T00:20:00,1991-08-29T01:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1991-09-07T19:30:00,1991-09-07T20:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
-1991-09-08T05:20:00,1991-09-09T13:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 189 of 189 epochs; no set confirmed at any of these epochs
-1991-09-21T09:10:00,1991-09-22T16:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 187 of 187 epochs; no set confirmed at any of these epochs
-1991-09-26T13:50:00,1991-09-26T14:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 4 of 4 epochs; no set confirmed at any of these epochs
-1991-10-03T03:20:00,1991-10-03T04:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
-1991-10-24T10:20:00,1991-10-24T11:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
-1991-10-31T07:40:00,1991-10-31T08:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-1991-10-31T08:10:00,1991-10-31T09:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 4 of 4 epochs; no set confirmed at any of these epochs
-1991-11-09T02:40:00,1991-11-09T03:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1991-11-09T03:20:00,1991-11-09T04:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1991-11-09T04:10:00,1991-11-10T21:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 200 of 200 epochs; no set confirmed at any of these epochs
-1991-11-10T22:00:00,1991-11-10T22:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1991-11-10T22:50:00,1991-11-10T23:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1991-11-10T23:40:00,1991-11-11T00:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1991-11-11T00:30:00,1991-11-11T01:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1991-11-11T01:20:00,1991-11-11T02:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1991-11-11T02:10:00,1991-11-11T02:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1991-11-11T03:00:00,1991-11-11T03:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1991-11-11T03:50:00,1991-11-11T04:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1991-11-11T04:40:00,1991-11-11T05:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1991-11-11T05:30:00,1991-11-11T06:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1991-11-11T06:20:00,1991-11-11T07:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1991-11-11T07:10:00,1991-11-11T07:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1991-11-11T08:00:00,1991-11-11T08:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1991-11-11T08:50:00,1991-11-11T09:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1991-11-11T09:40:00,1991-11-11T10:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1991-11-11T10:30:00,1991-11-11T11:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1991-11-11T11:20:00,1991-11-11T12:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1991-11-11T12:10:00,1991-11-11T12:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1991-11-11T13:00:00,1991-11-11T13:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1991-11-11T13:50:00,1991-11-11T14:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1991-11-11T14:40:00,1991-11-11T15:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1991-11-11T15:30:00,1991-11-11T16:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1991-11-11T16:20:00,1991-11-11T17:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1991-11-11T17:10:00,1991-11-11T17:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1991-11-11T18:00:00,1991-11-11T18:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1991-11-11T18:50:00,1991-11-11T19:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1991-11-11T19:50:00,1991-11-11T20:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1991-11-11T20:40:00,1991-11-11T21:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1991-11-11T21:30:00,1991-11-11T22:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1991-11-11T22:20:00,1991-11-11T22:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1991-11-11T23:10:00,1991-11-11T23:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1991-11-13T17:30:00,1991-11-13T18:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
-1991-12-06T13:30:00,1991-12-06T14:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 4 of 4 epochs; no set confirmed at any of these epochs
-1991-12-13T09:50:00,1991-12-13T10:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1991-12-17T10:20:00,1991-12-19T14:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 312 of 312 epochs; no set confirmed at any of these epochs
-1991-12-20T23:20:00,1991-12-21T01:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 13 of 13 epochs; no set confirmed at any of these epochs
-1991-12-23T21:50:00,1991-12-23T22:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
-1991-12-29T01:50:00,1991-12-29T02:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 4 of 4 epochs; no set confirmed at any of these epochs
-1991-12-29T03:20:00,1991-12-29T14:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 63 of 63 epochs; no set confirmed at any of these epochs
-1991-12-29T14:10:00,1991-12-29T15:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
-1991-12-29T16:00:00,1991-12-29T17:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 6 of 6 epochs; no set confirmed at any of these epochs
-1991-12-29T17:50:00,1991-12-29T18:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 4 of 4 epochs; no set confirmed at any of these epochs
-1991-12-31T14:50:00,1992-01-01T03:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 76 of 76 epochs; no set confirmed at any of these epochs
-1992-01-01T03:50:00,1992-01-01T05:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
-1992-01-01T05:40:00,1992-01-01T07:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
-1992-01-01T07:20:00,1992-01-01T08:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-01-01T08:10:00,1992-01-01T08:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-01-01T09:00:00,1992-01-01T09:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-01-01T09:50:00,1992-01-01T11:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 6 of 6 epochs; no set confirmed at any of these epochs
-1992-01-01T11:30:00,1992-01-01T12:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 6 of 6 epochs; no set confirmed at any of these epochs
-1992-01-01T13:10:00,1992-01-01T14:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
-1992-01-01T14:50:00,1992-01-01T16:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
-1992-01-01T16:30:00,1992-01-01T17:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
-1992-01-01T18:10:00,1992-01-01T18:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-01-06T18:10:00,1992-01-06T19:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
-1992-01-13T17:30:00,1992-01-13T22:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 28 of 28 epochs; no set confirmed at any of these epochs
-1992-01-14T13:30:00,1992-01-14T14:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
-1992-01-16T00:00:00,1992-01-16T00:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-01-16T00:40:00,1992-01-16T01:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-01-16T01:30:00,1992-01-16T02:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-01-16T02:20:00,1992-01-16T03:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-01-16T03:10:00,1992-01-16T03:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-01-16T04:00:00,1992-01-16T04:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-01-16T04:50:00,1992-01-16T05:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-01-16T05:50:00,1992-01-16T06:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-1992-01-30T13:00:00,1992-01-30T14:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
-1992-02-01T16:40:00,1992-02-01T21:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 28 of 28 epochs; no set confirmed at any of these epochs
-1992-02-02T05:30:00,1992-02-02T05:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-1992-02-02T06:20:00,1992-02-02T06:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-1992-02-02T07:10:00,1992-02-02T07:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-1992-02-02T08:00:00,1992-02-02T08:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-1992-02-02T08:50:00,1992-02-02T09:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-1992-02-02T09:40:00,1992-02-02T10:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-1992-02-02T10:30:00,1992-02-02T10:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-1992-02-02T11:20:00,1992-02-02T11:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-1992-02-02T12:10:00,1992-02-02T12:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-02-02T13:00:00,1992-02-02T13:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-02-02T13:50:00,1992-02-02T14:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-02-02T14:40:00,1992-02-02T15:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-02-02T15:30:00,1992-02-02T16:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-02-02T16:10:00,1992-02-02T16:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-02-02T17:00:00,1992-02-02T17:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-02-02T18:00:00,1992-02-02T18:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-02-02T18:50:00,1992-02-02T19:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-02-02T19:40:00,1992-02-02T20:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-02-02T20:30:00,1992-02-02T21:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-02-02T21:10:00,1992-02-02T21:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-02-02T22:00:00,1992-02-03T01:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 16 of 16 epochs; no set confirmed at any of these epochs
-1992-02-03T01:30:00,1992-02-03T02:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-02-03T02:20:00,1992-02-03T03:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-02-03T03:10:00,1992-02-03T03:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-02-03T04:00:00,1992-02-03T04:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-02-03T04:50:00,1992-02-03T05:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-02-03T05:40:00,1992-02-03T06:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-02-03T06:30:00,1992-02-03T07:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-02-03T07:20:00,1992-02-03T08:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-02-03T08:10:00,1992-02-03T08:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-02-03T09:00:00,1992-02-03T09:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-02-03T09:50:00,1992-02-04T03:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 101 of 101 epochs; no set confirmed at any of these epochs
-1992-02-10T08:30:00,1992-02-10T08:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-1992-02-10T09:10:00,1992-02-10T09:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-02-10T10:00:00,1992-02-10T10:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-02-10T10:50:00,1992-02-10T11:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-02-10T11:40:00,1992-02-10T12:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-02-10T12:30:00,1992-02-10T13:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-02-10T13:20:00,1992-02-10T14:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-02-10T14:10:00,1992-02-10T14:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-02-10T15:00:00,1992-02-10T15:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-02-10T15:50:00,1992-02-10T16:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-02-10T16:40:00,1992-02-10T17:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-02-10T17:30:00,1992-02-11T00:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 32 of 32 epochs; no set confirmed at any of these epochs
-1992-02-11T00:20:00,1992-02-11T01:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-02-11T01:10:00,1992-02-11T02:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
-1992-02-23T00:00:00,1992-02-23T08:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 41 of 41 epochs; no set confirmed at any of these epochs
-1992-02-23T08:20:00,1992-02-23T09:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-02-23T09:10:00,1992-02-23T09:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-02-23T10:00:00,1992-02-23T10:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-02-23T10:50:00,1992-02-23T11:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-02-23T11:40:00,1992-02-23T12:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-02-23T12:30:00,1992-02-23T13:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-02-23T13:20:00,1992-02-23T14:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-02-23T14:10:00,1992-02-23T14:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-02-23T15:00:00,1992-02-23T15:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-02-23T16:00:00,1992-02-23T16:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-1992-02-27T16:50:00,1992-02-27T17:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
-1992-02-28T13:40:00,1992-02-28T14:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-1992-02-28T14:30:00,1992-02-28T14:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-1992-02-28T15:20:00,1992-02-28T15:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-1992-02-28T16:00:00,1992-02-28T16:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-02-28T17:00:00,1992-02-28T17:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-1992-02-28T17:50:00,1992-02-28T18:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-1992-03-01T00:00:00,1992-03-01T00:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-1992-03-01T01:40:00,1992-03-01T02:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-03-01T02:30:00,1992-03-01T02:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-1992-03-01T03:10:00,1992-03-01T03:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-03-01T04:00:00,1992-03-01T04:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-03-01T04:50:00,1992-03-01T05:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-03-01T05:50:00,1992-03-01T06:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-03-01T06:40:00,1992-03-01T07:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-03-01T07:30:00,1992-03-01T08:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-03-01T08:20:00,1992-03-01T08:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-03-01T09:10:00,1992-03-01T09:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-03-01T10:00:00,1992-03-01T10:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-03-01T10:50:00,1992-03-01T11:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-03-01T11:40:00,1992-03-01T12:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-03-01T12:30:00,1992-03-01T13:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-03-01T13:20:00,1992-03-01T13:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-03-01T14:10:00,1992-03-01T14:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-03-01T15:00:00,1992-03-01T15:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-03-01T15:50:00,1992-03-01T16:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-03-01T16:40:00,1992-03-01T17:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-03-01T17:30:00,1992-03-01T18:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-03-01T18:20:00,1992-03-01T19:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-03-01T19:10:00,1992-03-01T19:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-03-01T20:00:00,1992-03-01T20:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-03-01T20:50:00,1992-03-01T21:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-03-01T21:40:00,1992-03-01T22:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-03-01T22:30:00,1992-03-01T23:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-03-01T23:20:00,1992-03-02T00:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-03-02T00:10:00,1992-03-02T00:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-03-02T01:00:00,1992-03-02T01:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-03-02T01:50:00,1992-03-02T02:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-03-02T02:40:00,1992-03-02T03:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-03-02T03:30:00,1992-03-02T04:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-03-02T04:20:00,1992-03-02T04:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-03-02T05:10:00,1992-03-02T05:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-03-02T06:00:00,1992-03-02T06:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-03-02T06:50:00,1992-03-02T07:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-03-02T07:50:00,1992-03-02T08:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-1992-03-02T08:40:00,1992-03-02T09:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-1992-03-02T09:30:00,1992-03-02T09:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-1992-03-03T01:30:00,1992-03-03T02:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
-1992-03-20T01:10:00,1992-03-20T02:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 6 of 6 epochs; no set confirmed at any of these epochs
-1992-03-20T02:40:00,1992-03-20T03:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-03-20T03:30:00,1992-03-20T04:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-03-20T04:20:00,1992-03-20T04:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-03-20T05:10:00,1992-03-20T05:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-03-20T06:00:00,1992-03-20T06:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-03-20T06:50:00,1992-03-20T07:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-03-20T07:40:00,1992-03-20T08:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-03-20T08:30:00,1992-03-20T09:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-03-20T09:20:00,1992-03-20T09:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-03-20T10:20:00,1992-03-20T10:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-1992-03-20T11:10:00,1992-03-20T11:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-1992-03-29T00:40:00,1992-03-29T01:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-03-29T02:00:00,1992-03-29T03:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
-1992-03-29T03:30:00,1992-03-29T18:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 88 of 88 epochs; no set confirmed at any of these epochs
-1992-03-29T18:40:00,1992-03-29T19:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 6 of 6 epochs; no set confirmed at any of these epochs
-1992-03-29T20:30:00,1992-03-29T21:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 4 of 4 epochs; no set confirmed at any of these epochs
-1992-03-30T11:50:00,1992-03-30T12:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-1992-03-30T13:20:00,1992-03-30T14:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-03-30T14:50:00,1992-03-30T15:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
-1992-03-30T16:30:00,1992-03-30T17:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 6 of 6 epochs; no set confirmed at any of these epochs
-1992-03-30T18:00:00,1992-03-30T19:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
-1992-03-30T19:40:00,1992-03-30T21:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
-1992-03-30T21:30:00,1992-03-30T22:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
-1992-03-30T23:20:00,1992-03-31T00:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-03-31T00:20:00,1992-03-31T00:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-03-31T01:40:00,1992-03-31T18:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 98 of 98 epochs; no set confirmed at any of these epochs
-1992-03-31T19:00:00,1992-03-31T20:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
-1992-03-31T20:50:00,1992-03-31T22:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
-1992-03-31T22:30:00,1992-03-31T23:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
-1992-04-01T00:10:00,1992-04-01T01:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
-1992-04-01T02:50:00,1992-04-01T03:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 4 of 4 epochs; no set confirmed at any of these epochs
-1992-04-01T04:30:00,1992-04-01T05:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
-1992-04-01T06:10:00,1992-04-01T06:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-1992-04-01T06:40:00,1992-04-01T07:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-04-01T07:50:00,1992-04-01T08:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-1992-04-02T14:30:00,1992-04-02T18:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 25 of 25 epochs; no set confirmed at any of these epochs
-1992-04-02T22:20:00,1992-04-03T08:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 58 of 58 epochs; no set confirmed at any of these epochs
-1992-04-03T09:40:00,1992-04-03T10:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
-1992-04-03T11:10:00,1992-04-03T12:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
-1992-04-03T23:20:00,1992-04-04T08:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 49 of 49 epochs; no set confirmed at any of these epochs
-1992-04-04T08:20:00,1992-04-04T09:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
-1992-04-04T10:00:00,1992-04-04T11:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
-1992-04-04T11:40:00,1992-04-04T13:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
-1992-04-04T13:20:00,1992-04-05T04:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 88 of 88 epochs; no set confirmed at any of these epochs
-1992-04-05T05:00:00,1992-04-05T06:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
-1992-04-05T06:40:00,1992-04-05T08:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
-1992-04-05T08:20:00,1992-04-05T09:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
-1992-04-05T10:10:00,1992-04-05T11:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
-1992-04-05T11:50:00,1992-04-05T13:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 6 of 6 epochs; no set confirmed at any of these epochs
-1992-04-05T13:30:00,1992-04-05T14:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 6 of 6 epochs; no set confirmed at any of these epochs
-1992-04-05T15:10:00,1992-04-05T16:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
-1992-04-05T17:00:00,1992-04-05T17:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-04-05T18:40:00,1992-04-05T19:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-04-05T20:10:00,1992-04-05T20:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-04-05T21:50:00,1992-04-05T22:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-04-05T23:20:00,1992-04-06T00:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 4 of 4 epochs; no set confirmed at any of these epochs
-1992-04-06T01:00:00,1992-04-06T01:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 4 of 4 epochs; no set confirmed at any of these epochs
-1992-04-06T02:40:00,1992-04-06T03:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 4 of 4 epochs; no set confirmed at any of these epochs
-1992-04-06T04:20:00,1992-04-06T05:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 4 of 4 epochs; no set confirmed at any of these epochs
-1992-04-06T06:00:00,1992-04-06T06:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 4 of 4 epochs; no set confirmed at any of these epochs
-1992-04-06T07:50:00,1992-04-06T08:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-04-27T21:50:00,1992-04-27T22:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
-1992-05-10T15:40:00,1992-05-10T16:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-1992-05-22T02:20:00,1992-05-22T03:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 4 of 4 epochs; no set confirmed at any of these epochs
-1992-07-19T00:20:00,1992-07-19T00:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-1992-07-19T00:50:00,1992-07-20T16:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 229 of 229 epochs; no set confirmed at any of these epochs
-1992-07-23T22:50:00,1992-07-23T23:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
-1992-09-03T08:00:00,1992-09-03T09:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
-1992-09-25T01:40:00,1992-09-25T02:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
-1992-12-16T13:20:00,1992-12-17T02:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 76 of 76 epochs; no set confirmed at any of these epochs
-1992-12-31T10:50:00,1992-12-31T11:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-1992-12-31T11:40:00,1992-12-31T12:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-1992-12-31T12:30:00,1992-12-31T13:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-12-31T13:20:00,1992-12-31T13:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-12-31T14:10:00,1992-12-31T14:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-12-31T15:00:00,1992-12-31T15:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-12-31T15:50:00,1992-12-31T16:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-12-31T16:40:00,1992-12-31T17:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1992-12-31T17:20:00,1992-12-31T18:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-12-31T18:10:00,1992-12-31T18:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1992-12-31T19:00:00,1993-01-01T01:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 32 of 32 epochs; no set confirmed at any of these epochs
-1993-01-01T01:50:00,1993-01-01T02:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1993-01-01T02:40:00,1993-01-01T03:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1993-01-01T03:30:00,1993-01-01T04:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1993-01-01T04:20:00,1993-01-01T05:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1993-01-01T05:10:00,1993-01-01T05:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1993-01-01T06:00:00,1993-01-01T06:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1993-01-01T06:50:00,1993-01-01T07:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1993-01-01T07:40:00,1993-01-01T08:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1993-01-01T08:30:00,1993-01-01T09:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1993-01-01T09:20:00,1993-01-01T10:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1993-01-01T10:20:00,1993-01-01T10:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1993-01-01T11:10:00,1993-01-01T11:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-1993-01-01T12:00:00,1993-01-01T12:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-1993-01-04T08:00:00,1993-01-04T08:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-1993-01-04T08:50:00,1993-01-04T09:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-1993-01-04T09:30:00,1993-01-04T10:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1993-01-04T10:20:00,1993-01-04T11:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1993-01-04T11:10:00,1993-01-04T11:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1993-01-04T12:00:00,1993-01-04T12:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1993-01-04T12:50:00,1993-01-04T13:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1993-01-04T13:40:00,1993-01-04T14:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1993-01-04T14:30:00,1993-01-04T15:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1993-01-04T15:20:00,1993-01-04T16:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1993-01-04T16:10:00,1993-01-04T16:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1993-01-04T17:00:00,1993-01-04T17:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1993-01-04T17:50:00,1993-01-04T18:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1993-01-04T18:40:00,1993-01-04T19:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1993-01-04T19:30:00,1993-01-05T02:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 32 of 32 epochs; no set confirmed at any of these epochs
-1993-01-06T22:50:00,1993-01-06T23:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-1993-01-06T23:40:00,1993-01-07T00:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-1993-01-07T00:30:00,1993-01-07T00:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-1993-05-04T12:00:00,1993-05-04T12:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1993-05-05T04:10:00,1993-05-05T05:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
-1993-12-25T06:50:00,1993-12-25T07:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-1993-12-25T07:40:00,1993-12-25T08:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-1993-12-25T08:30:00,1993-12-25T09:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1993-12-25T09:10:00,1993-12-25T09:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1993-12-25T10:00:00,1993-12-25T10:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1993-12-25T10:50:00,1993-12-25T11:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1993-12-25T11:40:00,1993-12-25T12:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1993-12-25T12:30:00,1993-12-25T13:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1993-12-25T13:20:00,1993-12-25T14:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1993-12-25T14:10:00,1993-12-26T09:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 92 of 92 epochs; no set confirmed at any of these epochs
-1993-12-26T09:30:00,1993-12-26T10:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1993-12-26T10:20:00,1993-12-26T11:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1993-12-26T11:10:00,1993-12-26T11:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1993-12-26T12:00:00,1993-12-26T12:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1993-12-26T12:50:00,1993-12-26T13:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1993-12-26T13:40:00,1993-12-26T14:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1993-12-26T14:30:00,1993-12-26T15:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1993-12-26T15:20:00,1993-12-26T16:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1993-12-26T16:10:00,1993-12-26T16:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1993-12-26T17:00:00,1993-12-26T17:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1993-12-26T17:50:00,1993-12-26T18:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1993-12-26T18:40:00,1993-12-26T19:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1993-12-26T19:30:00,1993-12-26T20:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1993-12-26T20:20:00,1993-12-26T21:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1993-12-26T21:10:00,1993-12-26T21:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1993-12-26T22:00:00,1993-12-26T22:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1993-12-26T23:00:00,1993-12-26T23:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1993-12-26T23:50:00,1993-12-27T00:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1993-12-27T00:40:00,1993-12-27T01:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1993-12-27T01:30:00,1993-12-27T02:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1993-12-27T02:20:00,1993-12-27T02:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-1993-12-27T03:10:00,1993-12-27T03:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-1994-01-07T00:00:00,1994-01-07T02:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 12 of 12 epochs; no set confirmed at any of these epochs
-1994-02-21T00:00:00,1994-02-21T19:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 110 of 110 epochs; no set confirmed at any of these epochs
-1994-04-10T17:20:00,1994-04-10T17:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-1994-04-11T19:10:00,1994-04-11T20:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
-1994-09-27T00:30:00,1994-09-27T01:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
-1994-09-28T09:10:00,1994-09-28T10:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
-1994-12-16T00:30:00,1994-12-17T00:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 144 of 144 epochs; no set confirmed at any of these epochs
-1995-03-21T05:40:00,1995-03-21T08:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 16 of 16 epochs; no set confirmed at any of these epochs
-1995-03-24T01:20:00,1995-03-24T02:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 4 of 4 epochs; no set confirmed at any of these epochs
-1995-05-10T01:20:00,1995-05-10T02:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 4 of 4 epochs; no set confirmed at any of these epochs
-1995-09-06T01:00:00,1995-09-06T01:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 4 of 4 epochs; no set confirmed at any of these epochs
-1995-11-15T06:20:00,1995-11-15T19:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 80 of 80 epochs; no set confirmed at any of these epochs
-1995-11-15T20:00:00,1995-11-15T20:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1995-11-15T21:00:00,1995-11-15T21:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1996-01-14T06:30:00,1996-01-14T20:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 85 of 85 epochs; no set confirmed at any of these epochs
-1996-03-21T06:20:00,1996-03-21T17:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 64 of 64 epochs; no set confirmed at any of these epochs
-1996-03-21T17:50:00,1996-03-21T18:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1996-03-22T00:00:00,1996-03-22T00:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 4 of 4 epochs; no set confirmed at any of these epochs
-1996-07-07T12:00:00,1996-07-09T00:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 215 of 215 epochs; no set confirmed at any of these epochs
-1999-07-06T01:10:00,1999-07-06T01:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1999-07-09T17:50:00,1999-07-09T18:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
-1999-07-13T23:40:00,1999-07-14T00:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1999-07-14T00:50:00,1999-07-14T01:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-1999-08-03T01:30:00,1999-08-03T01:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-1999-08-24T05:10:00,1999-08-24T05:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-1999-08-27T15:40:00,1999-08-27T17:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
-1999-08-27T17:30:00,1999-08-27T19:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
-1999-08-27T19:10:00,1999-08-27T20:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
-1999-08-27T20:50:00,1999-08-27T22:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
-1999-08-27T22:40:00,1999-08-28T00:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
-1999-08-28T00:20:00,1999-08-28T01:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 6 of 6 epochs; no set confirmed at any of these epochs
-1999-08-28T02:00:00,1999-08-28T03:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 6 of 6 epochs; no set confirmed at any of these epochs
-1999-08-28T03:40:00,1999-08-28T04:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
-1999-08-28T05:30:00,1999-08-28T06:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1999-09-10T00:50:00,1999-09-10T01:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-1999-10-01T00:50:00,1999-10-01T01:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-1999-10-09T01:00:00,1999-10-09T01:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 4 of 4 epochs; no set confirmed at any of these epochs
-1999-10-22T12:00:00,1999-10-22T12:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1999-10-22T15:50:00,1999-10-23T04:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 71 of 71 epochs; no set confirmed at any of these epochs
-1999-10-23T08:40:00,1999-10-23T09:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 4 of 4 epochs; no set confirmed at any of these epochs
-1999-10-23T10:10:00,1999-10-23T11:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
-1999-10-24T00:30:00,1999-10-24T01:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1999-10-24T02:00:00,1999-10-24T03:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 6 of 6 epochs; no set confirmed at any of these epochs
-1999-10-24T03:40:00,1999-10-24T05:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
-1999-10-24T05:20:00,1999-10-24T06:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
-1999-10-24T06:50:00,1999-10-24T08:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
-1999-10-24T08:40:00,1999-10-24T10:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
-1999-10-24T10:20:00,1999-10-24T11:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
-1999-10-24T12:00:00,1999-10-24T16:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 26 of 26 epochs; no set confirmed at any of these epochs
-1999-10-24T17:10:00,1999-10-24T18:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
-1999-10-24T18:50:00,1999-10-24T20:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
-1999-10-24T20:40:00,1999-10-24T21:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 6 of 6 epochs; no set confirmed at any of these epochs
-1999-10-24T22:30:00,1999-10-24T23:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 4 of 4 epochs; no set confirmed at any of these epochs
-1999-10-26T00:50:00,1999-10-26T01:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-1999-11-30T05:50:00,1999-11-30T06:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 4 of 4 epochs; no set confirmed at any of these epochs
-1999-12-06T03:50:00,1999-12-06T04:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-1999-12-06T05:00:00,1999-12-06T06:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 6 of 6 epochs; no set confirmed at any of these epochs
-1999-12-06T06:30:00,1999-12-06T08:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
-1999-12-06T08:10:00,1999-12-06T09:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
-1999-12-06T09:50:00,1999-12-06T11:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
-1999-12-06T11:50:00,1999-12-06T12:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1999-12-06T12:50:00,1999-12-06T13:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1999-12-06T14:20:00,1999-12-06T15:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1999-12-06T16:00:00,1999-12-06T16:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1999-12-06T18:40:00,1999-12-06T19:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1999-12-06T19:40:00,1999-12-06T21:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
-1999-12-06T21:20:00,1999-12-06T22:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
-1999-12-06T23:00:00,1999-12-06T23:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-1999-12-06T23:50:00,1999-12-07T08:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 50 of 50 epochs; no set confirmed at any of these epochs
-1999-12-20T19:30:00,1999-12-20T20:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1999-12-20T21:00:00,1999-12-20T21:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 4 of 4 epochs; no set confirmed at any of these epochs
-1999-12-20T22:00:00,1999-12-20T22:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-1999-12-20T22:30:00,1999-12-20T23:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 6 of 6 epochs; no set confirmed at any of these epochs
-1999-12-21T00:00:00,1999-12-21T01:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
-1999-12-21T01:40:00,1999-12-21T03:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
-1999-12-21T03:20:00,1999-12-21T04:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
-1999-12-21T05:00:00,1999-12-21T05:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1999-12-21T06:40:00,1999-12-21T11:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 27 of 27 epochs; no set confirmed at any of these epochs
-1999-12-21T11:40:00,1999-12-21T12:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 4 of 4 epochs; no set confirmed at any of these epochs
-1999-12-21T17:50:00,1999-12-21T18:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-1999-12-21T19:30:00,1999-12-21T20:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1999-12-21T21:10:00,1999-12-21T21:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-1999-12-23T05:50:00,1999-12-23T07:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
-1999-12-23T07:50:00,1999-12-23T09:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
-1999-12-23T09:30:00,1999-12-23T10:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 6 of 6 epochs; no set confirmed at any of these epochs
-1999-12-23T11:10:00,1999-12-23T12:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 6 of 6 epochs; no set confirmed at any of these epochs
-1999-12-23T12:50:00,1999-12-23T14:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 6 of 6 epochs; no set confirmed at any of these epochs
-1999-12-23T14:30:00,1999-12-23T15:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
-1999-12-23T16:00:00,1999-12-23T17:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 6 of 6 epochs; no set confirmed at any of these epochs
-1999-12-23T17:40:00,1999-12-23T18:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
-1999-12-23T19:20:00,1999-12-23T20:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
-1999-12-23T20:50:00,1999-12-23T22:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 6 of 6 epochs; no set confirmed at any of these epochs
-1999-12-23T22:30:00,1999-12-23T23:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 6 of 6 epochs; no set confirmed at any of these epochs
-1999-12-24T00:00:00,1999-12-24T01:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
-1999-12-24T01:40:00,1999-12-24T03:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
-1999-12-24T03:20:00,1999-12-24T04:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
-1999-12-24T05:00:00,1999-12-28T03:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 557 of 557 epochs; no set confirmed at any of these epochs
-1999-12-28T03:50:00,1999-12-28T04:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1999-12-28T04:40:00,1999-12-28T05:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1999-12-28T05:30:00,1999-12-28T06:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-1999-12-28T06:20:00,1999-12-28T07:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
-1999-12-28T08:00:00,1999-12-28T09:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
-1999-12-28T09:40:00,1999-12-28T11:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
-1999-12-28T11:20:00,1999-12-28T18:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 36 of 36 epochs; no set confirmed at any of these epochs
-1999-12-28T18:10:00,1999-12-28T19:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
-1999-12-30T21:10:00,1999-12-30T22:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
-1999-12-30T22:40:00,1999-12-31T00:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
-1999-12-31T00:20:00,1999-12-31T01:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
-1999-12-31T02:00:00,1999-12-31T03:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
-1999-12-31T03:40:00,1999-12-31T22:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 107 of 107 epochs; no set confirmed at any of these epochs
-1999-12-31T22:20:00,1999-12-31T23:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
-2000-01-01T00:00:00,2000-01-01T01:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 9 of 9 epochs; no set confirmed at any of these epochs
-2000-01-01T01:50:00,2000-01-02T16:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 216 of 216 epochs; no set confirmed at any of these epochs
-2000-01-02T16:40:00,2000-01-02T18:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
-2000-01-02T18:30:00,2000-01-02T19:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
-2000-01-02T20:10:00,2000-01-02T21:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
-2000-01-02T21:50:00,2000-01-02T23:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
-2000-01-02T23:40:00,2000-01-03T00:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 6 of 6 epochs; no set confirmed at any of these epochs
-2000-01-03T01:20:00,2000-01-03T02:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
-2000-01-03T03:00:00,2000-01-03T04:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
-2000-01-03T04:40:00,2000-01-03T05:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
-2000-01-03T06:20:00,2000-01-03T07:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 4 of 4 epochs; no set confirmed at any of these epochs
-2000-01-06T22:50:00,2000-01-06T23:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-2000-01-13T00:20:00,2000-01-13T10:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 59 of 59 epochs; no set confirmed at any of these epochs
-2000-01-13T10:40:00,2000-01-13T11:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 6 of 6 epochs; no set confirmed at any of these epochs
-2000-01-13T12:30:00,2000-01-13T13:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 4 of 4 epochs; no set confirmed at any of these epochs
-2000-01-13T14:20:00,2000-01-13T14:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-2000-01-13T15:10:00,2000-01-13T15:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-2000-01-13T16:50:00,2000-01-13T17:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-2000-01-13T18:20:00,2000-01-13T19:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
-2000-01-13T20:00:00,2000-01-13T21:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
-2000-01-13T21:40:00,2000-01-13T22:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
-2000-01-13T23:20:00,2000-01-14T00:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
-2000-01-14T01:00:00,2000-01-14T02:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
-2000-01-14T02:40:00,2000-01-14T03:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
-2000-01-14T04:20:00,2000-01-14T05:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 4 of 4 epochs; no set confirmed at any of these epochs
-2000-01-14T06:00:00,2000-01-14T06:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 4 of 4 epochs; no set confirmed at any of these epochs
-2000-01-14T07:40:00,2000-01-14T08:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 4 of 4 epochs; no set confirmed at any of these epochs
-2000-01-14T09:20:00,2000-01-14T10:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-2000-01-14T11:00:00,2000-01-14T11:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-2000-01-14T12:40:00,2000-01-14T13:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-2000-01-14T14:20:00,2000-01-14T15:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-2000-01-14T16:00:00,2000-01-14T16:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-2000-01-21T00:50:00,2000-01-21T01:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-2000-01-30T21:50:00,2000-01-30T22:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-2000-01-30T22:30:00,2000-01-30T23:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-2000-01-30T23:20:00,2000-01-30T23:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-2000-01-31T00:10:00,2000-01-31T00:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-2000-01-31T01:00:00,2000-01-31T01:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-2000-01-31T01:50:00,2000-01-31T02:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-2000-01-31T02:40:00,2000-01-31T03:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-2000-01-31T03:30:00,2000-01-31T05:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
-2000-01-31T05:10:00,2000-01-31T06:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
-2000-01-31T06:50:00,2000-01-31T08:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
-2000-01-31T08:30:00,2000-01-31T11:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 15 of 15 epochs; no set confirmed at any of these epochs
-2000-01-31T12:00:00,2000-01-31T12:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-2000-01-31T12:50:00,2000-01-31T13:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
-2000-01-31T17:50:00,2000-01-31T18:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-2000-01-31T18:30:00,2000-01-31T19:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-2000-01-31T19:20:00,2000-02-01T07:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 61 of 61 epochs; no set confirmed at any of these epochs
-2000-02-09T00:00:00,2000-02-09T00:30:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-2000-02-09T19:10:00,2000-02-09T20:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 4 of 4 epochs; no set confirmed at any of these epochs
-2000-02-11T23:30:00,2000-02-12T01:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 13 of 13 epochs; no set confirmed at any of these epochs
-2000-02-12T03:40:00,2000-02-12T12:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 52 of 52 epochs; no set confirmed at any of these epochs
-2000-02-21T05:10:00,2000-02-21T17:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 71 of 71 epochs; no set confirmed at any of these epochs
-2000-02-21T17:50:00,2000-02-21T18:50:00,the served set is not confirmed (no set of the other producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
-2000-02-21T19:40:00,2000-02-21T20:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-2000-02-21T21:20:00,2000-02-21T22:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-2000-03-02T10:10:00,2000-03-02T12:00:00,the served set is not confirmed (no set of the other producer within 10 m) at 10 of 10 epochs; no set confirmed at any of these epochs
-2000-03-02T12:20:00,2000-03-02T13:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
-2000-03-02T14:10:00,2000-03-02T15:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
-2000-03-02T16:00:00,2000-03-02T16:40:00,the served set is not confirmed (no set of the other producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
-2000-03-02T17:50:00,2000-03-02T18:20:00,the served set is not confirmed (no set of the other producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
-2000-03-07T01:50:00,2000-03-07T03:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
-2000-03-07T03:20:00,2000-03-08T00:10:00,the served set is not confirmed (no set of the other producer within 10 m) at 118 of 118 epochs; no set confirmed at any of these epochs
+1991-08-24T21:20:00,1991-08-24T22:20:00,the served set is not confirmed (no set of another producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
+1991-08-24T22:20:00,1991-08-24T22:23:00,arc position jump
+1991-09-07T19:30:00,1991-09-07T20:30:00,the served set is not confirmed (no set of another producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
+1991-09-08T04:50:00,1991-09-08T05:20:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; PRC confirmed at 2 of 2 epochs (111 unconfirmed epochs on 1991-09-08)
+1991-09-08T05:40:00,1991-09-08T06:10:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+1991-09-08T06:30:00,1991-09-08T13:00:00,the served set is not confirmed (no set of another producer within 10 m) at 31 of 31 epochs; VER13 confirmed at 1 of 31 epochs (witness only (not in the build))
+1991-09-08T13:10:00,1991-09-08T13:40:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+1991-09-08T14:00:00,1991-09-08T14:20:00,the served set is not confirmed (no set of another producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
+1991-09-08T16:50:00,1991-09-08T17:20:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+1991-09-08T17:30:00,1991-09-08T18:10:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1991-09-08T18:20:00,1991-09-09T06:40:00,the served set is not confirmed (no set of another producer within 10 m) at 59 of 59 epochs; no set confirmed at any of these epochs
+1991-09-09T06:50:00,1991-09-09T07:30:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1991-09-09T07:40:00,1991-09-09T08:20:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1991-09-09T08:30:00,1991-09-09T09:10:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1991-09-09T09:30:00,1991-09-09T09:50:00,the served set is not confirmed (no set of another producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
+1991-09-22T15:20:00,1991-09-22T16:30:00,the served set is not confirmed (no set of another producer within 10 m) at 6 of 6 epochs; no set confirmed at any of these epochs
+1991-09-26T13:50:00,1991-09-26T14:40:00,the served set is not confirmed (no set of another producer within 10 m) at 4 of 4 epochs; no set confirmed at any of these epochs
+1991-10-03T03:19:00,1991-10-03T03:20:00,arc position jump
+1991-10-03T03:20:00,1991-10-03T04:20:00,the served set is not confirmed (no set of another producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
+1991-10-24T10:15:00,1991-10-24T10:20:00,arc position jump
+1991-10-24T10:20:00,1991-10-24T11:20:00,the served set is not confirmed (no set of another producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
+1991-10-31T08:10:00,1991-10-31T09:00:00,the served set is not confirmed (no set of another producer within 10 m) at 4 of 4 epochs; no set confirmed at any of these epochs
+1991-11-09T02:40:00,1991-11-09T03:10:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+1991-11-09T03:20:00,1991-11-09T04:00:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1991-11-09T04:10:00,1991-11-10T21:50:00,the served set is not confirmed (no set of another producer within 10 m) at 200 of 200 epochs; no set confirmed at any of these epochs
+1991-11-10T22:00:00,1991-11-10T22:40:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1991-11-10T22:50:00,1991-11-10T23:30:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1991-11-10T23:40:00,1991-11-11T00:20:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1991-11-11T00:30:00,1991-11-11T01:10:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1991-11-11T01:20:00,1991-11-11T02:00:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1991-11-11T02:10:00,1991-11-11T02:50:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1991-11-11T03:00:00,1991-11-11T03:40:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1991-11-11T03:50:00,1991-11-11T04:30:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1991-11-11T04:40:00,1991-11-11T05:20:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1991-11-11T05:30:00,1991-11-11T06:10:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1991-11-11T06:20:00,1991-11-11T07:00:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1991-11-11T07:10:00,1991-11-11T07:50:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1991-11-11T08:00:00,1991-11-11T08:40:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1991-11-11T08:50:00,1991-11-11T09:30:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1991-11-11T09:40:00,1991-11-11T10:20:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1991-11-11T10:30:00,1991-11-11T11:10:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1991-11-11T11:20:00,1991-11-11T12:00:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1991-11-11T12:10:00,1991-11-11T12:50:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1991-11-11T13:00:00,1991-11-11T13:40:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1991-11-11T13:50:00,1991-11-11T14:30:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1991-11-11T14:40:00,1991-11-11T15:20:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1991-11-11T15:30:00,1991-11-11T16:10:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1991-11-11T16:20:00,1991-11-11T17:00:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1991-11-11T17:10:00,1991-11-11T17:50:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1991-11-11T18:00:00,1991-11-11T18:40:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1991-11-11T18:50:00,1991-11-11T19:30:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1991-11-11T19:50:00,1991-11-11T20:20:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+1991-11-11T20:40:00,1991-11-11T21:10:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+1991-11-11T21:30:00,1991-11-11T22:00:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+1991-11-11T22:20:00,1991-11-11T22:50:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+1991-11-11T23:10:00,1991-11-11T23:40:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+1991-11-13T17:30:00,1991-11-13T18:30:00,the served set is not confirmed (no set of another producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
+1991-11-13T18:30:00,1991-11-13T18:31:00,arc position jump
+1991-12-06T13:30:00,1991-12-06T14:20:00,the served set is not confirmed (no set of another producer within 10 m) at 4 of 4 epochs; no set confirmed at any of these epochs
+1991-12-13T09:47:00,1991-12-13T09:50:00,arc position jump
+1991-12-13T09:50:00,1991-12-13T10:30:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1991-12-13T10:30:00,1991-12-13T10:34:00,arc position jump
+1991-12-17T10:15:00,1991-12-17T10:20:00,arc position jump
+1991-12-17T10:20:00,1991-12-19T13:40:00,the served set is not confirmed (no set of another producer within 10 m) at 307 of 307 epochs; no set confirmed at any of these epochs
+1991-12-21T01:10:00,1991-12-21T01:40:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+1991-12-23T21:47:00,1991-12-23T21:50:00,arc position jump
+1991-12-23T21:50:00,1991-12-23T22:50:00,the served set is not confirmed (no set of another producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
+1992-01-01T11:40:00,1992-01-01T17:50:00,the served set is not confirmed (no set of another producer within 10 m) at 36 of 36 epochs; PRC confirmed at 21 of 36 epochs (64 unconfirmed epochs on 1992-01-01); VER13 confirmed at 36 of 36 epochs (witness only (not in the build))
+1992-01-06T18:06:00,1992-01-06T18:10:00,arc position jump
+1992-01-06T18:10:00,1992-01-06T19:10:00,the served set is not confirmed (no set of another producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
+1992-01-13T17:30:00,1992-01-13T18:00:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+1992-01-13T18:20:00,1992-01-13T18:50:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+1992-01-13T19:00:00,1992-01-13T19:40:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1992-01-13T19:50:00,1992-01-13T20:30:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1992-01-13T20:40:00,1992-01-13T22:20:00,the served set is not confirmed (no set of another producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
+1992-01-14T13:28:00,1992-01-14T13:30:00,arc position jump
+1992-01-14T13:30:00,1992-01-14T14:30:00,the served set is not confirmed (no set of another producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
+1992-01-14T14:30:00,1992-01-14T14:32:00,arc position jump
+1992-01-30T13:00:00,1992-01-30T14:00:00,the served set is not confirmed (no set of another producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
+1992-02-01T16:50:00,1992-02-01T21:30:00,the served set is not confirmed (no set of another producer within 10 m) at 22 of 22 epochs; no set confirmed at any of these epochs
+1992-02-02T05:30:00,1992-02-02T05:50:00,the served set is not confirmed (no set of another producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
+1992-02-02T06:20:00,1992-02-02T06:40:00,the served set is not confirmed (no set of another producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
+1992-02-02T07:10:00,1992-02-02T07:30:00,the served set is not confirmed (no set of another producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
+1992-02-02T08:00:00,1992-02-02T08:20:00,the served set is not confirmed (no set of another producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
+1992-02-02T08:50:00,1992-02-02T09:10:00,the served set is not confirmed (no set of another producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
+1992-02-02T09:40:00,1992-02-02T10:00:00,the served set is not confirmed (no set of another producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
+1992-02-02T10:30:00,1992-02-02T10:50:00,the served set is not confirmed (no set of another producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
+1992-02-02T11:20:00,1992-02-02T11:40:00,the served set is not confirmed (no set of another producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
+1992-02-02T12:10:00,1992-02-02T12:40:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+1992-02-02T13:00:00,1992-02-02T13:30:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+1992-02-02T13:50:00,1992-02-02T14:20:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+1992-02-02T14:40:00,1992-02-02T15:10:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+1992-02-02T15:30:00,1992-02-02T16:00:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+1992-02-02T16:10:00,1992-02-02T16:50:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1992-02-02T17:00:00,1992-02-02T17:40:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1992-02-02T18:00:00,1992-02-02T18:30:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+1992-02-02T18:50:00,1992-02-02T19:20:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+1992-02-02T19:40:00,1992-02-02T20:10:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+1992-02-02T20:30:00,1992-02-02T21:00:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+1992-02-02T21:10:00,1992-02-02T21:50:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1992-02-02T22:00:00,1992-02-03T01:20:00,the served set is not confirmed (no set of another producer within 10 m) at 16 of 16 epochs; no set confirmed at any of these epochs
+1992-02-03T01:30:00,1992-02-03T02:10:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1992-02-03T02:20:00,1992-02-03T03:00:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1992-02-03T03:10:00,1992-02-03T03:50:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1992-02-03T04:00:00,1992-02-03T04:40:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1992-02-03T04:50:00,1992-02-03T05:30:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1992-02-03T05:40:00,1992-02-03T06:20:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1992-02-03T06:30:00,1992-02-03T07:10:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1992-02-03T07:20:00,1992-02-03T08:00:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1992-02-03T08:10:00,1992-02-03T08:50:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1992-02-03T09:00:00,1992-02-03T09:40:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1992-02-03T09:50:00,1992-02-04T03:10:00,the served set is not confirmed (no set of another producer within 10 m) at 101 of 101 epochs; no set confirmed at any of these epochs
+1992-02-04T03:10:00,1992-02-04T03:14:00,arc position jump
+1992-02-10T08:30:00,1992-02-10T08:50:00,the served set is not confirmed (no set of another producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
+1992-02-10T09:10:00,1992-02-10T09:40:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+1992-02-10T10:00:00,1992-02-10T10:40:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1992-02-10T10:50:00,1992-02-10T11:30:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1992-02-10T11:40:00,1992-02-10T12:20:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1992-02-10T12:30:00,1992-02-10T13:10:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1992-02-10T13:20:00,1992-02-10T14:00:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1992-02-10T14:10:00,1992-02-10T14:50:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1992-02-10T15:00:00,1992-02-10T15:40:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1992-02-10T15:50:00,1992-02-10T16:30:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1992-02-10T16:40:00,1992-02-10T17:20:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1992-02-10T17:30:00,1992-02-11T00:10:00,the served set is not confirmed (no set of another producer within 10 m) at 32 of 32 epochs; no set confirmed at any of these epochs
+1992-02-11T00:20:00,1992-02-11T01:00:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1992-02-11T01:10:00,1992-02-11T02:40:00,the served set is not confirmed (no set of another producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
+1992-02-22T23:45:00,1992-02-22T23:57:00,arc position jump
+1992-02-23T00:00:00,1992-02-23T08:10:00,the served set is not confirmed (no set of another producer within 10 m) at 41 of 41 epochs; no set confirmed at any of these epochs
+1992-02-23T08:20:00,1992-02-23T09:00:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1992-02-23T09:10:00,1992-02-23T09:50:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1992-02-23T10:00:00,1992-02-23T10:40:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1992-02-23T10:50:00,1992-02-23T11:30:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1992-02-23T11:40:00,1992-02-23T12:20:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1992-02-23T12:30:00,1992-02-23T13:10:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1992-02-23T13:20:00,1992-02-23T14:00:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1992-02-23T14:10:00,1992-02-23T14:50:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1992-02-23T15:00:00,1992-02-23T15:40:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1992-02-23T16:00:00,1992-02-23T16:20:00,the served set is not confirmed (no set of another producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
+1992-02-27T16:50:00,1992-02-27T17:50:00,the served set is not confirmed (no set of another producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
+1992-02-28T13:40:00,1992-02-28T14:00:00,the served set is not confirmed (no set of another producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
+1992-02-28T14:30:00,1992-02-28T14:50:00,the served set is not confirmed (no set of another producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
+1992-02-28T15:20:00,1992-02-28T15:40:00,the served set is not confirmed (no set of another producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
+1992-02-28T16:00:00,1992-02-28T16:30:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+1992-02-28T17:00:00,1992-02-28T17:20:00,the served set is not confirmed (no set of another producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
+1992-02-28T17:50:00,1992-02-28T18:10:00,the served set is not confirmed (no set of another producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
+1992-03-01T00:00:00,1992-03-01T00:20:00,the served set is not confirmed (no set of another producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
+1992-03-01T01:40:00,1992-03-01T02:10:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; VER13 confirmed at 2 of 2 epochs (witness only (not in the build))
+1992-03-01T02:30:00,1992-03-01T02:50:00,the served set is not confirmed (no set of another producer within 10 m) at 1 of 1 epochs; dgm-e04 confirmed at 1 of 1 epochs (42 unconfirmed epochs on 1992-03-01); VER13 confirmed at 1 of 1 epochs (witness only (not in the build))
+1992-03-01T03:20:00,1992-03-01T03:50:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; dgm-e04 confirmed at 2 of 2 epochs (42 unconfirmed epochs on 1992-03-01); VER13 confirmed at 2 of 2 epochs (witness only (not in the build))
+1992-03-01T04:00:00,1992-03-01T04:40:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; dgm-e04 confirmed at 1 of 2 epochs (42 unconfirmed epochs on 1992-03-01); VER13 confirmed at 1 of 2 epochs (witness only (not in the build))
+1992-03-01T04:50:00,1992-03-01T05:30:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; dgm-e04 confirmed at 1 of 2 epochs (42 unconfirmed epochs on 1992-03-01); VER13 confirmed at 1 of 2 epochs (witness only (not in the build))
+1992-03-01T05:50:00,1992-03-01T06:20:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; dgm-e04 confirmed at 1 of 2 epochs (42 unconfirmed epochs on 1992-03-01); VER13 confirmed at 1 of 2 epochs (witness only (not in the build))
+1992-03-01T06:40:00,1992-03-01T07:10:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; dgm-e04 confirmed at 1 of 2 epochs (42 unconfirmed epochs on 1992-03-01); VER13 confirmed at 1 of 2 epochs (witness only (not in the build))
+1992-03-01T07:30:00,1992-03-01T07:50:00,the served set is not confirmed (no set of another producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
+1992-03-01T08:20:00,1992-03-01T08:40:00,the served set is not confirmed (no set of another producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
+1992-03-01T09:10:00,1992-03-01T09:30:00,the served set is not confirmed (no set of another producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
+1992-03-01T10:00:00,1992-03-01T10:20:00,the served set is not confirmed (no set of another producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
+1992-03-01T10:50:00,1992-03-01T11:10:00,the served set is not confirmed (no set of another producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
+1992-03-01T11:40:00,1992-03-01T12:10:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+1992-03-01T12:30:00,1992-03-01T12:50:00,the served set is not confirmed (no set of another producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
+1992-03-01T13:20:00,1992-03-01T13:40:00,the served set is not confirmed (no set of another producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
+1992-03-01T14:10:00,1992-03-01T14:30:00,the served set is not confirmed (no set of another producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
+1992-03-01T15:00:00,1992-03-01T15:20:00,the served set is not confirmed (no set of another producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
+1992-03-01T15:50:00,1992-03-01T16:10:00,the served set is not confirmed (no set of another producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
+1992-03-01T16:40:00,1992-03-01T17:00:00,the served set is not confirmed (no set of another producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
+1992-03-01T17:30:00,1992-03-01T17:50:00,the served set is not confirmed (no set of another producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
+1992-03-01T18:20:00,1992-03-01T19:00:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; dgm-e04 confirmed at 1 of 2 epochs (42 unconfirmed epochs on 1992-03-01); VER13 confirmed at 1 of 2 epochs (witness only (not in the build))
+1992-03-01T20:50:00,1992-03-01T21:10:00,the served set is not confirmed (no set of another producer within 10 m) at 1 of 1 epochs; dgm-e04 confirmed at 1 of 1 epochs (42 unconfirmed epochs on 1992-03-01); VER13 confirmed at 1 of 1 epochs (witness only (not in the build))
+1992-03-01T21:40:00,1992-03-01T22:10:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; dgm-e04 confirmed at 2 of 2 epochs (42 unconfirmed epochs on 1992-03-01); VER13 confirmed at 2 of 2 epochs (witness only (not in the build))
+1992-03-01T22:30:00,1992-03-01T23:00:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; dgm-e04 confirmed at 1 of 2 epochs (42 unconfirmed epochs on 1992-03-01); VER13 confirmed at 1 of 2 epochs (witness only (not in the build))
+1992-03-01T23:20:00,1992-03-01T23:50:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; dgm-e04 confirmed at 1 of 2 epochs (42 unconfirmed epochs on 1992-03-01); VER13 confirmed at 1 of 2 epochs (witness only (not in the build))
+1992-03-02T00:10:00,1992-03-02T00:40:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+1992-03-02T01:00:00,1992-03-02T01:30:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+1992-03-02T01:50:00,1992-03-02T02:20:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+1992-03-02T02:40:00,1992-03-02T03:10:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+1992-03-02T03:30:00,1992-03-02T04:00:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+1992-03-02T04:20:00,1992-03-02T04:50:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+1992-03-02T05:10:00,1992-03-02T05:40:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+1992-03-02T06:00:00,1992-03-02T06:30:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+1992-03-02T06:50:00,1992-03-02T07:20:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+1992-03-02T07:50:00,1992-03-02T08:10:00,the served set is not confirmed (no set of another producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
+1992-03-02T08:40:00,1992-03-02T09:00:00,the served set is not confirmed (no set of another producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
+1992-03-02T09:30:00,1992-03-02T09:50:00,the served set is not confirmed (no set of another producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
+1992-03-03T01:30:00,1992-03-03T02:30:00,the served set is not confirmed (no set of another producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
+1992-03-20T01:10:00,1992-03-20T02:10:00,the served set is not confirmed (no set of another producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
+1992-03-30T21:30:00,1992-03-30T22:30:00,the served set is not confirmed (no set of another producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
+1992-03-30T23:20:00,1992-03-31T00:00:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1992-03-31T00:20:00,1992-03-31T00:50:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+1992-03-31T01:40:00,1992-03-31T15:20:00,the served set is not confirmed (no set of another producer within 10 m) at 80 of 80 epochs; PRC confirmed at 1 of 80 epochs (121 unconfirmed epochs on 1992-03-31)
+1992-03-31T15:40:00,1992-03-31T17:00:00,the served set is not confirmed (no set of another producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
+1992-03-31T17:20:00,1992-03-31T18:40:00,the served set is not confirmed (no set of another producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
+1992-03-31T19:00:00,1992-03-31T20:20:00,the served set is not confirmed (no set of another producer within 10 m) at 7 of 7 epochs; VER13 confirmed at 1 of 7 epochs (witness only (not in the build))
+1992-03-31T20:40:00,1992-03-31T22:00:00,the served set is not confirmed (no set of another producer within 10 m) at 7 of 7 epochs; PRC confirmed at 1 of 7 epochs (121 unconfirmed epochs on 1992-03-31); VER13 confirmed at 7 of 7 epochs (witness only (not in the build))
+1992-03-31T22:20:00,1992-03-31T23:50:00,the served set is not confirmed (no set of another producer within 10 m) at 8 of 8 epochs; PRC confirmed at 1 of 8 epochs (121 unconfirmed epochs on 1992-03-31); VER13 confirmed at 7 of 8 epochs (witness only (not in the build))
+1992-04-01T00:10:00,1992-04-01T01:10:00,the served set is not confirmed (no set of another producer within 10 m) at 5 of 5 epochs; dgm-e04 confirmed at 5 of 5 epochs (14 unconfirmed epochs on 1992-04-01); VER13 confirmed at 5 of 5 epochs (witness only (not in the build))
+1992-04-02T14:30:00,1992-04-02T17:50:00,the served set is not confirmed (no set of another producer within 10 m) at 19 of 19 epochs; no set confirmed at any of these epochs
+1992-04-02T18:00:00,1992-04-02T18:50:00,the served set is not confirmed (no set of another producer within 10 m) at 4 of 4 epochs; no set confirmed at any of these epochs
+1992-04-02T22:20:00,1992-04-02T22:50:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+1992-04-02T23:00:00,1992-04-03T00:30:00,the served set is not confirmed (no set of another producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
+1992-04-03T00:40:00,1992-04-03T02:10:00,the served set is not confirmed (no set of another producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
+1992-04-03T02:20:00,1992-04-03T03:50:00,the served set is not confirmed (no set of another producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
+1992-04-03T04:00:00,1992-04-03T04:40:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1992-04-03T04:50:00,1992-04-03T05:30:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1992-04-03T05:40:00,1992-04-03T06:20:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1992-04-03T06:30:00,1992-04-03T07:10:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1992-04-03T07:20:00,1992-04-03T08:00:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1992-04-03T09:50:00,1992-04-03T10:40:00,the served set is not confirmed (no set of another producer within 10 m) at 4 of 4 epochs; no set confirmed at any of these epochs
+1992-04-03T11:10:00,1992-04-03T12:10:00,the served set is not confirmed (no set of another producer within 10 m) at 4 of 4 epochs; no set confirmed at any of these epochs
+1992-04-03T23:20:00,1992-04-04T03:00:00,the served set is not confirmed (no set of another producer within 10 m) at 21 of 21 epochs; no set confirmed at any of these epochs
+1992-04-04T03:00:00,1992-04-04T03:01:00,arc position jump
+1992-04-04T03:40:00,1992-04-04T04:50:00,the served set is not confirmed (no set of another producer within 10 m) at 6 of 6 epochs; VER13 confirmed at 1 of 6 epochs (witness only (not in the build))
+1992-04-04T05:20:00,1992-04-04T06:20:00,the served set is not confirmed (no set of another producer within 10 m) at 5 of 5 epochs; VER13 confirmed at 2 of 5 epochs (witness only (not in the build))
+1992-04-04T07:10:00,1992-04-04T08:00:00,the served set is not confirmed (no set of another producer within 10 m) at 4 of 4 epochs; VER13 confirmed at 1 of 4 epochs (witness only (not in the build))
+1992-04-04T08:50:00,1992-04-04T13:00:00,the served set is not confirmed (no set of another producer within 10 m) at 22 of 22 epochs; PRC confirmed at 4 of 22 epochs (128 unconfirmed epochs on 1992-04-04); VER13 confirmed at 10 of 22 epochs (witness only (not in the build))
+1992-04-04T14:00:00,1992-04-04T14:40:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1992-04-04T15:40:00,1992-04-04T16:20:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1992-04-04T17:20:00,1992-04-04T18:00:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1992-04-04T19:00:00,1992-04-04T19:40:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1992-04-04T20:40:00,1992-04-04T21:20:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; VER13 confirmed at 3 of 3 epochs (witness only (not in the build))
+1992-04-04T22:20:00,1992-04-04T23:10:00,the served set is not confirmed (no set of another producer within 10 m) at 4 of 4 epochs; PRC confirmed at 1 of 4 epochs (128 unconfirmed epochs on 1992-04-04)
+1992-04-05T21:50:00,1992-04-05T22:20:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+1992-04-05T23:30:00,1992-04-06T00:10:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1992-04-06T01:10:00,1992-04-06T01:50:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1992-04-27T21:47:00,1992-04-27T21:50:00,arc position jump
+1992-04-27T21:50:00,1992-04-27T22:50:00,the served set is not confirmed (no set of another producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
+1992-05-22T02:13:00,1992-05-22T02:20:00,arc position jump
+1992-05-22T02:20:00,1992-05-22T03:10:00,the served set is not confirmed (no set of another producer within 10 m) at 4 of 4 epochs; no set confirmed at any of these epochs
+1992-07-19T00:20:00,1992-07-19T00:40:00,the served set is not confirmed (no set of another producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
+1992-07-19T00:50:00,1992-07-20T16:10:00,the served set is not confirmed (no set of another producer within 10 m) at 229 of 229 epochs; no set confirmed at any of these epochs
+1992-07-23T22:46:00,1992-07-23T22:50:00,arc position jump
+1992-07-23T22:50:00,1992-07-23T23:50:00,the served set is not confirmed (no set of another producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
+1992-09-02T13:39:00,1992-09-02T13:50:00,arc position jump
+1992-09-03T08:00:00,1992-09-03T09:20:00,the served set is not confirmed (no set of another producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
+1992-09-25T01:40:00,1992-09-25T02:40:00,the served set is not confirmed (no set of another producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
+1992-12-16T13:13:00,1992-12-16T13:20:00,arc position jump
+1992-12-16T13:20:00,1992-12-17T02:10:00,the served set is not confirmed (no set of another producer within 10 m) at 76 of 76 epochs; no set confirmed at any of these epochs
+1993-01-05T01:40:00,1993-01-05T02:10:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+1993-05-04T12:00:00,1993-05-04T12:30:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+1993-05-04T12:30:00,1993-05-04T12:35:00,arc position jump
+1993-05-05T04:10:00,1993-05-05T05:10:00,the served set is not confirmed (no set of another producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
+1993-05-05T05:10:00,1993-05-05T05:14:00,arc position jump
+1993-12-21T18:35:00,1993-12-21T18:50:00,arc position jump
+1993-12-23T17:33:00,1993-12-23T17:48:00,arc position jump
+1994-01-07T01:00:00,1994-01-07T02:10:00,the served set is not confirmed (no set of another producer within 10 m) at 6 of 6 epochs; no set confirmed at any of these epochs
+1994-02-21T00:00:00,1994-02-21T19:10:00,the served set is not confirmed (no set of another producer within 10 m) at 110 of 110 epochs; no set confirmed at any of these epochs
+1994-04-08T12:47:00,1994-04-08T13:00:00,arc position jump
+1994-04-10T17:20:00,1994-04-10T17:40:00,the served set is not confirmed (no set of another producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
+1994-04-11T19:10:00,1994-04-11T20:10:00,the served set is not confirmed (no set of another producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
+1994-09-27T00:28:00,1994-09-27T00:30:00,arc position jump
+1994-09-27T00:30:00,1994-09-27T01:30:00,the served set is not confirmed (no set of another producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
+1994-09-28T09:10:00,1994-09-28T10:10:00,the served set is not confirmed (no set of another producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
+1994-12-16T00:23:00,1994-12-16T00:30:00,arc position jump
+1994-12-16T00:30:00,1994-12-17T00:40:00,the served set is not confirmed (no set of another producer within 10 m) at 144 of 144 epochs; no set confirmed at any of these epochs
+1995-03-21T05:35:00,1995-03-21T05:40:00,arc position jump
+1995-03-21T05:40:00,1995-03-21T08:30:00,the served set is not confirmed (no set of another producer within 10 m) at 16 of 16 epochs; no set confirmed at any of these epochs
+1995-03-24T01:14:00,1995-03-24T01:20:00,arc position jump
+1995-03-24T01:20:00,1995-03-24T02:10:00,the served set is not confirmed (no set of another producer within 10 m) at 4 of 4 epochs; no set confirmed at any of these epochs
+1995-03-24T02:10:00,1995-03-24T02:13:00,arc position jump
+1995-05-10T01:20:00,1995-05-10T02:10:00,the served set is not confirmed (no set of another producer within 10 m) at 4 of 4 epochs; no set confirmed at any of these epochs
+1995-09-05T07:34:00,1995-09-05T07:48:00,arc position jump
+1995-09-06T01:00:00,1995-09-06T01:50:00,the served set is not confirmed (no set of another producer within 10 m) at 4 of 4 epochs; no set confirmed at any of these epochs
+1995-11-15T06:13:00,1995-11-15T06:20:00,arc position jump
+1995-11-15T06:20:00,1995-11-15T19:40:00,the served set is not confirmed (no set of another producer within 10 m) at 79 of 79 epochs; no set confirmed at any of these epochs
+1996-01-14T06:26:00,1996-01-14T06:30:00,arc position jump
+1996-01-14T06:30:00,1996-01-14T20:50:00,the served set is not confirmed (no set of another producer within 10 m) at 85 of 85 epochs; no set confirmed at any of these epochs
+1996-01-14T20:50:00,1996-01-14T20:54:00,arc position jump
+1996-03-21T06:20:00,1996-03-21T17:30:00,the served set is not confirmed (no set of another producer within 10 m) at 64 of 64 epochs; no set confirmed at any of these epochs
+1996-03-21T17:50:00,1996-03-21T18:20:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+1996-03-21T23:52:00,1996-03-22T00:00:00,arc position jump
+1996-03-22T00:00:00,1996-03-22T00:50:00,the served set is not confirmed (no set of another producer within 10 m) at 4 of 4 epochs; no set confirmed at any of these epochs
+1996-03-22T00:50:00,1996-03-22T00:54:00,arc position jump
+1996-07-07T12:00:00,1996-07-09T00:00:00,the served set is not confirmed (no set of another producer within 10 m) at 215 of 215 epochs; no set confirmed at any of these epochs
+1998-11-21T05:39:30,1998-11-21T05:45:30,arc position jump
+1999-03-02T05:15:30,1999-03-02T05:21:30,arc position jump
+1999-07-02T04:57:00,1999-07-02T05:01:00,arc position jump
+1999-07-06T01:10:00,1999-07-06T01:40:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+1999-07-09T17:50:00,1999-07-09T18:50:00,the served set is not confirmed (no set of another producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
+1999-07-13T23:40:00,1999-07-14T00:10:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+1999-07-14T00:50:00,1999-07-14T01:10:00,the served set is not confirmed (no set of another producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
+1999-08-03T01:30:00,1999-08-03T01:50:00,the served set is not confirmed (no set of another producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
+1999-08-24T05:10:00,1999-08-24T05:30:00,the served set is not confirmed (no set of another producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
+1999-08-27T15:40:00,1999-08-27T17:20:00,the served set is not confirmed (no set of another producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
+1999-08-27T17:30:00,1999-08-27T19:00:00,the served set is not confirmed (no set of another producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
+1999-08-27T19:10:00,1999-08-27T20:40:00,the served set is not confirmed (no set of another producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
+1999-08-27T20:50:00,1999-08-27T22:20:00,the served set is not confirmed (no set of another producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
+1999-08-27T22:40:00,1999-08-28T00:00:00,the served set is not confirmed (no set of another producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
+1999-08-28T00:20:00,1999-08-28T01:30:00,the served set is not confirmed (no set of another producer within 10 m) at 6 of 6 epochs; no set confirmed at any of these epochs
+1999-08-28T02:00:00,1999-08-28T03:10:00,the served set is not confirmed (no set of another producer within 10 m) at 6 of 6 epochs; no set confirmed at any of these epochs
+1999-08-28T03:40:00,1999-08-28T04:40:00,the served set is not confirmed (no set of another producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
+1999-08-28T05:30:00,1999-08-28T06:10:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1999-09-10T00:50:00,1999-09-10T01:10:00,the served set is not confirmed (no set of another producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
+1999-10-01T00:50:00,1999-10-01T01:10:00,the served set is not confirmed (no set of another producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
+1999-10-09T01:00:00,1999-10-09T01:50:00,the served set is not confirmed (no set of another producer within 10 m) at 4 of 4 epochs; no set confirmed at any of these epochs
+1999-10-22T12:00:00,1999-10-22T12:30:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+1999-10-22T15:50:00,1999-10-23T04:00:00,the served set is not confirmed (no set of another producer within 10 m) at 71 of 71 epochs; no set confirmed at any of these epochs
+1999-10-23T08:40:00,1999-10-23T09:30:00,the served set is not confirmed (no set of another producer within 10 m) at 4 of 4 epochs; no set confirmed at any of these epochs
+1999-10-23T10:10:00,1999-10-23T11:10:00,the served set is not confirmed (no set of another producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
+1999-10-24T00:30:00,1999-10-24T01:00:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+1999-10-24T02:00:00,1999-10-24T03:10:00,the served set is not confirmed (no set of another producer within 10 m) at 6 of 6 epochs; no set confirmed at any of these epochs
+1999-10-24T03:40:00,1999-10-24T05:00:00,the served set is not confirmed (no set of another producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
+1999-10-24T05:20:00,1999-10-24T06:40:00,the served set is not confirmed (no set of another producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
+1999-10-24T06:50:00,1999-10-24T08:20:00,the served set is not confirmed (no set of another producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
+1999-10-24T08:40:00,1999-10-24T10:00:00,the served set is not confirmed (no set of another producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
+1999-10-24T10:20:00,1999-10-24T11:50:00,the served set is not confirmed (no set of another producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
+1999-10-24T12:00:00,1999-10-24T16:50:00,the served set is not confirmed (no set of another producer within 10 m) at 26 of 26 epochs; no set confirmed at any of these epochs
+1999-10-24T17:10:00,1999-10-24T18:30:00,the served set is not confirmed (no set of another producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
+1999-10-24T18:50:00,1999-10-24T20:10:00,the served set is not confirmed (no set of another producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
+1999-10-24T20:40:00,1999-10-24T21:50:00,the served set is not confirmed (no set of another producer within 10 m) at 6 of 6 epochs; no set confirmed at any of these epochs
+1999-10-24T22:30:00,1999-10-24T23:20:00,the served set is not confirmed (no set of another producer within 10 m) at 4 of 4 epochs; no set confirmed at any of these epochs
+1999-10-26T00:50:00,1999-10-26T01:10:00,the served set is not confirmed (no set of another producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
+1999-11-30T05:50:00,1999-11-30T06:40:00,the served set is not confirmed (no set of another producer within 10 m) at 4 of 4 epochs; no set confirmed at any of these epochs
+1999-12-06T03:50:00,1999-12-06T04:10:00,the served set is not confirmed (no set of another producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
+1999-12-06T05:00:00,1999-12-06T06:10:00,the served set is not confirmed (no set of another producer within 10 m) at 6 of 6 epochs; no set confirmed at any of these epochs
+1999-12-06T06:30:00,1999-12-06T08:00:00,the served set is not confirmed (no set of another producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
+1999-12-06T08:10:00,1999-12-06T09:30:00,the served set is not confirmed (no set of another producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
+1999-12-06T09:50:00,1999-12-06T11:10:00,the served set is not confirmed (no set of another producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
+1999-12-06T11:50:00,1999-12-06T12:20:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+1999-12-06T12:50:00,1999-12-06T13:20:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+1999-12-06T14:20:00,1999-12-06T15:00:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1999-12-06T16:00:00,1999-12-06T16:40:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1999-12-06T18:40:00,1999-12-06T19:20:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1999-12-06T19:40:00,1999-12-06T21:00:00,the served set is not confirmed (no set of another producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
+1999-12-06T21:20:00,1999-12-06T22:50:00,the served set is not confirmed (no set of another producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
+1999-12-06T23:00:00,1999-12-06T23:40:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+1999-12-06T23:50:00,1999-12-07T08:50:00,the served set is not confirmed (no set of another producer within 10 m) at 50 of 50 epochs; no set confirmed at any of these epochs
+1999-12-20T19:30:00,1999-12-20T20:00:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+1999-12-20T21:00:00,1999-12-20T21:50:00,the served set is not confirmed (no set of another producer within 10 m) at 4 of 4 epochs; no set confirmed at any of these epochs
+1999-12-20T22:00:00,1999-12-20T22:20:00,the served set is not confirmed (no set of another producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
+1999-12-20T22:30:00,1999-12-20T23:40:00,the served set is not confirmed (no set of another producer within 10 m) at 6 of 6 epochs; no set confirmed at any of these epochs
+1999-12-21T00:00:00,1999-12-21T01:20:00,the served set is not confirmed (no set of another producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
+1999-12-21T01:40:00,1999-12-21T03:10:00,the served set is not confirmed (no set of another producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
+1999-12-21T03:20:00,1999-12-21T04:50:00,the served set is not confirmed (no set of another producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
+1999-12-21T05:00:00,1999-12-21T05:30:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+1999-12-21T06:40:00,1999-12-21T11:20:00,the served set is not confirmed (no set of another producer within 10 m) at 27 of 27 epochs; no set confirmed at any of these epochs
+1999-12-21T11:40:00,1999-12-21T12:30:00,the served set is not confirmed (no set of another producer within 10 m) at 4 of 4 epochs; no set confirmed at any of these epochs
+1999-12-21T17:50:00,1999-12-21T18:10:00,the served set is not confirmed (no set of another producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
+1999-12-21T19:30:00,1999-12-21T20:00:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+1999-12-21T21:10:00,1999-12-21T21:30:00,the served set is not confirmed (no set of another producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
+1999-12-23T05:50:00,1999-12-23T07:30:00,the served set is not confirmed (no set of another producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
+1999-12-23T07:50:00,1999-12-23T09:10:00,the served set is not confirmed (no set of another producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
+1999-12-23T09:30:00,1999-12-23T10:40:00,the served set is not confirmed (no set of another producer within 10 m) at 6 of 6 epochs; no set confirmed at any of these epochs
+1999-12-23T11:10:00,1999-12-23T12:20:00,the served set is not confirmed (no set of another producer within 10 m) at 6 of 6 epochs; no set confirmed at any of these epochs
+1999-12-23T12:50:00,1999-12-23T14:00:00,the served set is not confirmed (no set of another producer within 10 m) at 6 of 6 epochs; no set confirmed at any of these epochs
+1999-12-23T14:30:00,1999-12-23T15:30:00,the served set is not confirmed (no set of another producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
+1999-12-23T16:00:00,1999-12-23T17:10:00,the served set is not confirmed (no set of another producer within 10 m) at 6 of 6 epochs; no set confirmed at any of these epochs
+1999-12-23T17:40:00,1999-12-23T18:40:00,the served set is not confirmed (no set of another producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
+1999-12-23T19:20:00,1999-12-23T20:20:00,the served set is not confirmed (no set of another producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
+1999-12-23T20:50:00,1999-12-23T22:00:00,the served set is not confirmed (no set of another producer within 10 m) at 6 of 6 epochs; no set confirmed at any of these epochs
+1999-12-23T22:30:00,1999-12-23T23:40:00,the served set is not confirmed (no set of another producer within 10 m) at 6 of 6 epochs; no set confirmed at any of these epochs
+1999-12-24T00:00:00,1999-12-24T01:20:00,the served set is not confirmed (no set of another producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
+1999-12-24T01:40:00,1999-12-24T03:00:00,the served set is not confirmed (no set of another producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
+1999-12-24T03:20:00,1999-12-24T04:50:00,the served set is not confirmed (no set of another producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
+1999-12-24T05:00:00,1999-12-28T03:30:00,the served set is not confirmed (no set of another producer within 10 m) at 557 of 557 epochs; no set confirmed at any of these epochs
+1999-12-28T03:50:00,1999-12-28T04:20:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+1999-12-28T04:40:00,1999-12-28T05:10:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+1999-12-28T05:30:00,1999-12-28T06:00:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+1999-12-28T06:20:00,1999-12-28T07:50:00,the served set is not confirmed (no set of another producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
+1999-12-28T08:00:00,1999-12-28T09:30:00,the served set is not confirmed (no set of another producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
+1999-12-28T09:40:00,1999-12-28T11:10:00,the served set is not confirmed (no set of another producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
+1999-12-28T11:20:00,1999-12-28T18:00:00,the served set is not confirmed (no set of another producer within 10 m) at 36 of 36 epochs; no set confirmed at any of these epochs
+1999-12-28T18:10:00,1999-12-28T19:40:00,the served set is not confirmed (no set of another producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
+1999-12-30T21:10:00,1999-12-30T22:10:00,the served set is not confirmed (no set of another producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
+1999-12-30T22:40:00,1999-12-31T00:10:00,the served set is not confirmed (no set of another producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
+1999-12-31T00:20:00,1999-12-31T01:50:00,the served set is not confirmed (no set of another producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
+1999-12-31T02:00:00,1999-12-31T03:30:00,the served set is not confirmed (no set of another producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
+1999-12-31T03:40:00,1999-12-31T22:10:00,the served set is not confirmed (no set of another producer within 10 m) at 107 of 107 epochs; no set confirmed at any of these epochs
+1999-12-31T22:20:00,1999-12-31T23:50:00,the served set is not confirmed (no set of another producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
+2000-01-01T00:00:00,2000-01-01T01:40:00,the served set is not confirmed (no set of another producer within 10 m) at 9 of 9 epochs; no set confirmed at any of these epochs
+2000-01-01T01:50:00,2000-01-02T16:30:00,the served set is not confirmed (no set of another producer within 10 m) at 216 of 216 epochs; no set confirmed at any of these epochs
+2000-01-02T16:40:00,2000-01-02T18:10:00,the served set is not confirmed (no set of another producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
+2000-01-02T18:30:00,2000-01-02T19:50:00,the served set is not confirmed (no set of another producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
+2000-01-02T20:10:00,2000-01-02T21:30:00,the served set is not confirmed (no set of another producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
+2000-01-02T21:50:00,2000-01-02T23:10:00,the served set is not confirmed (no set of another producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
+2000-01-02T23:40:00,2000-01-03T00:50:00,the served set is not confirmed (no set of another producer within 10 m) at 6 of 6 epochs; no set confirmed at any of these epochs
+2000-01-03T01:20:00,2000-01-03T02:20:00,the served set is not confirmed (no set of another producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
+2000-01-03T03:00:00,2000-01-03T04:00:00,the served set is not confirmed (no set of another producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
+2000-01-03T04:40:00,2000-01-03T05:40:00,the served set is not confirmed (no set of another producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
+2000-01-03T06:20:00,2000-01-03T07:10:00,the served set is not confirmed (no set of another producer within 10 m) at 4 of 4 epochs; no set confirmed at any of these epochs
+2000-01-06T22:50:00,2000-01-06T23:10:00,the served set is not confirmed (no set of another producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
+2000-01-13T00:20:00,2000-01-13T10:20:00,the served set is not confirmed (no set of another producer within 10 m) at 59 of 59 epochs; no set confirmed at any of these epochs
+2000-01-13T10:40:00,2000-01-13T11:50:00,the served set is not confirmed (no set of another producer within 10 m) at 6 of 6 epochs; no set confirmed at any of these epochs
+2000-01-13T12:30:00,2000-01-13T13:20:00,the served set is not confirmed (no set of another producer within 10 m) at 4 of 4 epochs; no set confirmed at any of these epochs
+2000-01-13T14:20:00,2000-01-13T14:50:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+2000-01-13T15:10:00,2000-01-13T15:40:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+2000-01-13T16:50:00,2000-01-13T17:30:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+2000-01-13T18:20:00,2000-01-13T19:20:00,the served set is not confirmed (no set of another producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
+2000-01-13T20:00:00,2000-01-13T21:00:00,the served set is not confirmed (no set of another producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
+2000-01-13T21:40:00,2000-01-13T22:40:00,the served set is not confirmed (no set of another producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
+2000-01-13T23:20:00,2000-01-14T00:20:00,the served set is not confirmed (no set of another producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
+2000-01-14T01:00:00,2000-01-14T02:00:00,the served set is not confirmed (no set of another producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
+2000-01-14T02:40:00,2000-01-14T03:40:00,the served set is not confirmed (no set of another producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
+2000-01-14T04:20:00,2000-01-14T05:10:00,the served set is not confirmed (no set of another producer within 10 m) at 4 of 4 epochs; no set confirmed at any of these epochs
+2000-01-14T06:00:00,2000-01-14T06:50:00,the served set is not confirmed (no set of another producer within 10 m) at 4 of 4 epochs; no set confirmed at any of these epochs
+2000-01-14T07:40:00,2000-01-14T08:30:00,the served set is not confirmed (no set of another producer within 10 m) at 4 of 4 epochs; no set confirmed at any of these epochs
+2000-01-14T09:20:00,2000-01-14T10:00:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+2000-01-14T11:00:00,2000-01-14T11:40:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+2000-01-14T12:40:00,2000-01-14T13:20:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+2000-01-14T14:20:00,2000-01-14T15:00:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+2000-01-14T16:00:00,2000-01-14T16:30:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+2000-01-21T00:50:00,2000-01-21T01:10:00,the served set is not confirmed (no set of another producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
+2000-01-30T21:50:00,2000-01-30T22:10:00,the served set is not confirmed (no set of another producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
+2000-01-30T22:30:00,2000-01-30T23:00:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+2000-01-30T23:20:00,2000-01-30T23:50:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+2000-01-31T00:10:00,2000-01-31T00:50:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+2000-01-31T01:00:00,2000-01-31T01:40:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+2000-01-31T01:50:00,2000-01-31T02:30:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+2000-01-31T02:40:00,2000-01-31T03:20:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+2000-01-31T03:30:00,2000-01-31T05:00:00,the served set is not confirmed (no set of another producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
+2000-01-31T05:10:00,2000-01-31T06:40:00,the served set is not confirmed (no set of another producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
+2000-01-31T06:50:00,2000-01-31T08:20:00,the served set is not confirmed (no set of another producer within 10 m) at 8 of 8 epochs; no set confirmed at any of these epochs
+2000-01-31T08:30:00,2000-01-31T11:40:00,the served set is not confirmed (no set of another producer within 10 m) at 15 of 15 epochs; no set confirmed at any of these epochs
+2000-01-31T12:00:00,2000-01-31T12:30:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+2000-01-31T12:50:00,2000-01-31T13:10:00,the served set is not confirmed (no set of another producer within 10 m) at 1 of 1 epochs; no set confirmed at any of these epochs
+2000-01-31T17:50:00,2000-01-31T18:20:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+2000-01-31T18:30:00,2000-01-31T19:10:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+2000-01-31T19:20:00,2000-02-01T07:50:00,the served set is not confirmed (no set of another producer within 10 m) at 61 of 61 epochs; no set confirmed at any of these epochs
+2000-02-09T00:00:00,2000-02-09T00:30:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+2000-02-09T19:10:00,2000-02-09T20:00:00,the served set is not confirmed (no set of another producer within 10 m) at 4 of 4 epochs; no set confirmed at any of these epochs
+2000-02-11T23:30:00,2000-02-12T01:50:00,the served set is not confirmed (no set of another producer within 10 m) at 13 of 13 epochs; no set confirmed at any of these epochs
+2000-02-12T03:40:00,2000-02-12T12:50:00,the served set is not confirmed (no set of another producer within 10 m) at 52 of 52 epochs; no set confirmed at any of these epochs
+2000-02-21T05:10:00,2000-02-21T17:10:00,the served set is not confirmed (no set of another producer within 10 m) at 71 of 71 epochs; no set confirmed at any of these epochs
+2000-02-21T17:50:00,2000-02-21T18:50:00,the served set is not confirmed (no set of another producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
+2000-02-21T19:40:00,2000-02-21T20:20:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+2000-02-21T21:20:00,2000-02-21T22:00:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+2000-03-02T10:10:00,2000-03-02T12:00:00,the served set is not confirmed (no set of another producer within 10 m) at 10 of 10 epochs; no set confirmed at any of these epochs
+2000-03-02T12:20:00,2000-03-02T13:40:00,the served set is not confirmed (no set of another producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
+2000-03-02T14:10:00,2000-03-02T15:10:00,the served set is not confirmed (no set of another producer within 10 m) at 5 of 5 epochs; no set confirmed at any of these epochs
+2000-03-02T16:00:00,2000-03-02T16:40:00,the served set is not confirmed (no set of another producer within 10 m) at 3 of 3 epochs; no set confirmed at any of these epochs
+2000-03-02T17:50:00,2000-03-02T18:20:00,the served set is not confirmed (no set of another producer within 10 m) at 2 of 2 epochs; no set confirmed at any of these epochs
+2000-03-07T01:50:00,2000-03-07T03:10:00,the served set is not confirmed (no set of another producer within 10 m) at 7 of 7 epochs; no set confirmed at any of these epochs
+2000-03-07T03:20:00,2000-03-08T00:10:00,the served set is not confirmed (no set of another producer within 10 m) at 118 of 118 epochs; no set confirmed at any of these epochs

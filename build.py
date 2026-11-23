@@ -27,6 +27,11 @@ Fixes (README "Fixes"), two curated inputs versioned with this script:
   `replaces`); the build stops when that set no longer covers the whole day or the rule no longer chooses `replaces`.
 - no_orbit_spans.csv: NO_ORBIT spans (UTC) where no set is confirmed by a second producer. The build writes them, sorted, to
   <SATELLITE>/no_orbit.csv (columns start,end,reason); a downloader refuses a scene whose orbit window overlaps one.
+The arc self-consistency scan (jump_scan): every node of every kept arc is compared with the interpolation of its 4 + 4
+neighbours; a run of nodes more than JUMP_THRESHOLD off is a position jump inside the arc. Every jump is listed in the build log
+and summary.json; where the arc is the served orbit, the jump's span (4 nodes beyond its first and last node above the
+threshold) is added to <SATELLITE>/no_orbit.csv with the reason 'arc position jump', except the parts no_orbit_spans.csv
+already lists.
 """
 import argparse
 import bisect
@@ -37,6 +42,7 @@ import gzip
 import hashlib
 import io
 import json
+import math
 import os
 import re
 import struct
@@ -78,7 +84,8 @@ STEP_SETS = (
     ('ENVISAT', 'Doris/vor', list(range(2002, 2013))),
 )
 # The gravity model of each set's orbit solution (Delft: the set's folder name and arclist; PRC rev2: PGM055, D-PAF manual;
-# DORIS: GDR-D, published 2012; the DORIS files name no model).
+# DORIS: the IDS GDR-D standard, gravity model EIGEN-GRGS_RL02bis (2011; CNES 'POD configuration GDR-D'), files published 2012;
+# the DORIS files name no model).
 SET_MODEL = {
     'ODR.ERS-1/dgm-e04': 'DGM-E04', 'ODR.ERS-1/dgm-e04.fd': 'DGM-E04', 'ODR.ERS-1/jgm3': 'JGM-3',
     'ers_precise_orb/ERS1': 'PGM055',
@@ -92,7 +99,7 @@ SET_MODEL = {
 OPERATIONAL = ('ODR.ERS-1/dgm-e04.fd', 'ODR.ERS-2/dgm-e04.fd')
 # Set precedence: newest gravity model generation first; sets of the same model by file date (newest first); the operational
 # sets last. ERS: EIGEN-GRACE01S (2003) > GRIM5-C1 (1999) > DGM-E04 precise (1998) > PGM055 (1995) > JGM-3 (1994) >
-# DGM-E04 operational. Envisat: GDR-D (published 2012) > EIGEN-CG03C (2005). The README gives the sources.
+# DGM-E04 operational. Envisat: GDR-D (EIGEN-GRGS_RL02bis, 2011) > EIGEN-CG03C (2005). The README gives the sources.
 RANK_ORDER = ('EIGEN-GRACE01S', 'GRIM5-C1', 'DGM-E04', 'PGM055', 'JGM-3', 'DGM-E04 operational', 'GDR-D', 'EIGEN-CG03C')
 
 
@@ -116,6 +123,23 @@ FIXES_COLUMNS = ('satellite', 'day', 'set', 'replaces', 'evidence', 'reason')
 NO_ORBIT_SPANS = os.path.join(REPO, 'no_orbit_spans.csv')
 NO_ORBIT_SPANS_COLUMNS = ('satellite', 'start', 'end', 'served', 'evidence', 'reason')
 NO_ORBIT = 'no_orbit.csv'
+# the arc self-consistency scan (README "Fixes"): each node of a kept arc against the 8-point Lagrange interpolation of its
+# JUMP_NODES neighbours on each side; a residual above JUMP_THRESHOLD metres is a position jump inside the arc. Measured over
+# the 27.0 M judged nodes of the 5,970 kept arcs: the bulk of the residuals ends at 2.5 mm (PRC, 30 s nodes in mm; 99.9 % point
+# 1.7 mm), 2.5 cm (Delft ODR, 60 s nodes in 1e-7 degree; 19 mm) and 1.6 cm (DORIS, 60 s nodes in mm; 8 mm), where the count
+# per fifth of a decade drops by one to two and a half orders; above it a flat tail (tens to hundreds of nodes per fifth of a
+# decade) reaches 659 km. 0.5 m is 20 times the largest bulk end.
+JUMP_NODES = 4
+JUMP_THRESHOLD = 0.5
+JUMP_REASON = 'arc position jump'
+JUMP_BINS = 10
+# the ellipsoid of the Delft ODR latitude, longitude and height (as the insardev reader)
+ODR_A = 6378137.0
+ODR_F = 1.0 / 298.257
+# UTC dates whose first second follows an inserted leap second, 1991-2012 (IERS Bulletin C, Leap_Second.dat); the scan does
+# not judge a node whose neighbours span one (the insardev reader refuses such windows)
+LEAP_DATES = ('1992-07-01', '1993-07-01', '1994-07-01', '1996-01-01', '1997-07-01', '1999-01-01', '2006-01-01', '2009-01-01',
+              '2012-07-01')
 
 LOG = []
 
@@ -493,6 +517,200 @@ def no_orbit_csv(rows):
     return buf.getvalue().encode()
 
 
+# ------------------------------------------------------------------------------------------------------------------ jump scan
+def odr_nodes(data):
+    """Every record of a Delft ODR: (seconds after 1985 UTC as written, Earth-fixed x, y, z m on the ODR ellipsoid)."""
+    n = struct.unpack('>i', data[24:28])[0]
+    e2 = ODR_F * (2.0 - ODR_F)
+    out = []
+    for t, lat, lon, h in struct.iter_unpack('>4i', data[32:32 + 16 * n]):
+        lat, lon, h = math.radians(lat / 1e7), math.radians(lon / 1e7), h / 1e3
+        sl, cl = math.sin(lat), math.cos(lat)
+        normal = ODR_A / math.sqrt(1.0 - e2 * sl * sl)
+        out.append((float(t), (normal + h) * cl * math.cos(lon), (normal + h) * cl * math.sin(lon), (normal * (1.0 - e2) + h) * sl))
+    return out
+
+
+def poe_nodes(gzdata):
+    """Every epoch of a Delft POE: (seconds after 1985 UTC, x, y, z m)."""
+    lines = gzip.decompress(gzdata).decode('latin-1').splitlines()
+    out = []
+    for k in range(len(lines) // 4):
+        a, b = lines[4 * k], lines[4 * k + 1]
+        stamp = dt.datetime.strptime(f'{float(a[:22].replace("D", "E")):.0f}', '%Y%m%d%H%M')
+        out.append(((stamp - ODR_EPOCH).total_seconds() + float(a[22:44]), *(float(b[i:i + 22]) for i in (0, 22, 44))))
+    return out
+
+
+def prc_nodes(data):
+    """Every STTERR record of a PRC: (seconds after 1985, TDT shifted by the file's TDT-UTC as parse_prc does, x, y, z m)."""
+    tdt_utc = int(data[130 + 47:130 + 52]) / 1e3
+    base = (PRC_EPOCH - ODR_EPOCH).total_seconds() - tdt_utc
+    out = []
+    for i in range(0, len(data) - 129, 130):
+        if data[i:i + 6] == b'STTERR':
+            r = data[i:i + 130]
+            out.append((base + int(r[14:20]) * 8640.0 + int(r[20:31]) / 1e6, int(r[31:43]) / 1e3, int(r[43:55]) / 1e3,
+                        int(r[55:67]) / 1e3))
+    return out
+
+
+MONTHS = {m: k + 1 for k, m in enumerate(('JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'))}
+
+
+def dor_nodes(data):
+    """Every record of a DORIS DOR_VOR data set: (seconds after 1985 UTC, a second 60 counted as such, x, y, z m)."""
+    off, size, n, rec = (int(x) for x in re.search(
+        rb'DS_NAME="DORIS PRECISE ORBIT\s*"\s*DS_TYPE=M\s*FILENAME="[^"]*"\s*DS_OFFSET=\+(\d+)<bytes>\s*'
+        rb'DS_SIZE=\+(\d+)<bytes>\s*NUM_DSR=\+(\d+)\s*DSR_SIZE=\+(\d+)<bytes>', data[:20000]).groups())
+    out = []
+    for k in range(n):
+        r = data[off + rec * k:off + rec * (k + 1)].decode('ascii')
+        day = dt.datetime(int(r[7:11]), MONTHS[r[3:6]], int(r[0:2]))
+        seconds = (day - ODR_EPOCH).total_seconds() + int(r[12:14]) * 3600 + int(r[15:17]) * 60 + float(r[18:27])
+        out.append((seconds, *(float(v) for v in r[27:].split()[2:5])))
+    return out
+
+
+def arc_nodes(arc, data):
+    """The arc's records inside its span (start .. end), in time order: (seconds after 1985 UTC, x, y, z m)."""
+    name = arc['name']
+    nodes = (odr_nodes(data) if name.startswith('ODR.') else poe_nodes(data) if name.startswith('envisat.')
+             else prc_nodes(data) if name.startswith('PRC_') else dor_nodes(data))
+    low, high = (arc['start'] - ODR_EPOCH).total_seconds(), (arc['end'] - ODR_EPOCH).total_seconds()
+    return sorted(p for p in nodes if low <= p[0] <= high)
+
+
+def residual_bin(r):
+    """The histogram bin of a residual: JUMP_BINS per decade from 0.1 mm; residuals below fall in bin 0."""
+    return 0 if r < 1e-4 else 1 + int(math.log10(r / 1e-4) * JUMP_BINS)
+
+
+def scan_nodes(nodes):
+    """Each node against the 8-point Lagrange interpolation of its 4 + 4 neighbours (JUMP_NODES on each side).
+    Returns (residuals, skipped): residuals[i] in metres or None where not judged: the first and last JUMP_NODES nodes,
+    a neighbourhood holding a leap second (LEAP_DATES) or two nodes at one time; skipped counts the latter two."""
+    n, m = len(nodes), JUMP_NODES
+    res = [None] * n
+    skipped = 0
+    leaps = [(dt.datetime.fromisoformat(d) - ODR_EPOCH).total_seconds() for d in LEAP_DATES]
+    t = [p[0] for p in nodes]
+    xyz = [p[1:] for p in nodes]
+    offsets = [k for k in range(-m, m + 1) if k]
+    # the weights of evenly spaced neighbours: C(2m, m + k) (-1)^(k + 1) / C(2m, m)
+    even = {k: (-1) ** (abs(k) + 1) * math.comb(2 * m, m + k) / math.comb(2 * m, m) for k in offsets}
+    for i in range(m, n - m):
+        lo, hi = t[i - m], t[i + m]
+        if any(lo - 2 <= leap <= hi + 2 for leap in leaps):
+            skipped += 1
+            continue
+        h = t[i + 1] - t[i]
+        if all(abs(t[i + k] - t[i] - k * h) < 1e-3 for k in offsets):
+            w = even
+        else:
+            nb = [t[i + k] - t[i] for k in offsets]
+            if any(abs(a - b) < 1e-3 for j, a in enumerate(nb) for b in nb[j + 1:]) or any(abs(a) < 1e-3 for a in nb):
+                skipped += 1
+                continue
+            w = {}
+            for k, a in zip(offsets, nb):
+                num = den = 1.0
+                for b in nb:
+                    if b != a:
+                        num *= -b
+                        den *= a - b
+                w[k] = num / den
+        p = xyz[i]
+        dx = sum(w[k] * xyz[i + k][0] for k in offsets) - p[0]
+        dy = sum(w[k] * xyz[i + k][1] for k in offsets) - p[1]
+        dz = sum(w[k] * xyz[i + k][2] for k in offsets) - p[2]
+        res[i] = math.sqrt(dx * dx + dy * dy + dz * dz)
+    return res, skipped
+
+
+def seconds(when):
+    return (when - ODR_EPOCH).total_seconds()
+
+
+def moment(s):
+    return ODR_EPOCH + dt.timedelta(seconds=s)
+
+
+def jump_scan(result, no_orbit):
+    """The arc self-consistency scan (README "Fixes"). Every node of every kept arc (inside its span) is judged by scan_nodes;
+    a jump is a run of nodes above JUMP_THRESHOLD, runs at most 2 * JUMP_NODES nodes apart counted as one; its span runs
+    from JUMP_NODES nodes before its first node above the threshold to JUMP_NODES nodes after its last. A jump is served when,
+    at a node inside its span, the arc is the served orbit: the day's index lists it and, of the arcs it lists covering the
+    node, its span centre is the nearest (the rule of the confirmation, README "Fixes"). The parts of a served jump's span
+    outside the NO_ORBIT spans of no_orbit_spans.csv become spans of their own (reason JUMP_REASON), touching ones merged.
+    Returns the per-satellite scan (statistics and jumps) and no_orbit with those spans added, sorted."""
+    scan, merged = {}, {}
+    for sat, r in result.items():
+        listed = {}
+        for a in r['kept']:
+            for d in a['won']:
+                listed.setdefault(d, []).append(a)
+        for rows in listed.values():
+            rows.sort(key=lambda a: (a['start'], a['zip']))
+
+        def served(t):
+            covering = [a for a in listed.get(moment(t).date(), []) if seconds(a['start']) <= t <= seconds(a['end'])]
+            return min(covering, key=lambda a: abs((seconds(a['start']) + seconds(a['end'])) / 2 - t)) if covering else None
+        stats = {'arcs': 0, 'nodes': 0, 'judged': 0, 'not_judged': 0, 'histogram': {}}
+        jumps = []
+        for a in r['kept']:
+            nodes = arc_nodes(a, read_original(a))
+            res, skipped = scan_nodes(nodes)
+            stats['arcs'] += 1
+            stats['nodes'] += len(nodes)
+            stats['not_judged'] += skipped
+            hist = stats['histogram'].setdefault(a['set'], {})
+            for x in res:
+                if x is not None:
+                    stats['judged'] += 1
+                    b = residual_bin(x)
+                    hist[b] = hist.get(b, 0) + 1
+            hot = [i for i, x in enumerate(res) if x is not None and x > JUMP_THRESHOLD]
+            runs = []
+            for i in hot:
+                if runs and i - runs[-1][-1] <= 2 * JUMP_NODES:
+                    runs[-1].append(i)
+                else:
+                    runs.append([i])
+            for run in runs:
+                peak = max(run, key=lambda i: res[i])
+                low, high = max(0, run[0] - JUMP_NODES), min(len(nodes) - 1, run[-1] + JUMP_NODES)
+                start = moment(math.floor(nodes[low][0]))
+                end = moment(math.ceil(nodes[high][0]))
+                by = [served(nodes[i][0]) for i in range(low, high + 1)]
+                if any(x is a for x in by):
+                    status = 'served'
+                else:
+                    others = sorted({x['zip'] for x in by if x is not None})
+                    days = {moment(nodes[i][0]).date() for i in range(low, high + 1)}
+                    status = ('not served: served from ' + ', '.join(others or ['no arc'])
+                              if any(x is a for d in days for x in listed.get(d, []))
+                              else 'not served: the day indexes list it nowhere in the span')
+                jumps.append({'arc': a['zip'], 'set': a['set'], 'peak': f'{moment(nodes[peak][0]):%Y-%m-%dT%H:%M:%S.%f}'[:23],
+                              'peak_m': round(res[peak], 3), 'nodes_above': len(run), 'start': start, 'end': end,
+                              'status': status})
+        curated = [(s, e) for s, e, _ in no_orbit[sat]]
+        new = []
+        for j in jumps:
+            if j['status'] != 'served':
+                continue
+            parts = subtract([(j['start'], j['end'])], curated)
+            j['status'] = ('refused' if parts == [(j['start'], j['end'])] else 'refused in part (the rest inside a NO_ORBIT span)'
+                           if parts else 'inside a NO_ORBIT span')
+            new += parts
+        added = [(s, e, JUMP_REASON) for s, e in union(new)]
+        stats['spans'] = len(added)
+        stats['hours'] = round(sum((e - s).total_seconds() for s, e, _ in added) / 3600, 2)
+        scan[sat] = {'stats': stats, 'jumps': jumps, 'spans': added}
+        merged[sat] = sorted(no_orbit[sat] + added)
+    return scan, merged
+
+
 # ------------------------------------------------------------------------------------------------------------------ selection
 def days_of(arc):
     """UTC days the arc covers any part of."""
@@ -707,7 +925,7 @@ def write_tree(result, no_orbit):
         log(f'  stale (not produced by this build): {s}')
 
 
-def report(result, cache, no_orbit):
+def report(result, cache, no_orbit, scan):
     summary = {}
     for sat, r in result.items():
         log(f'== {sat}')
@@ -716,13 +934,28 @@ def report(result, cache, no_orbit):
             log(f'    override {d}: {new} in place of {old}')
         hours = sum((e - s).total_seconds() for s, e, _ in no_orbit[sat]) / 3600
         log(f'  NO_ORBIT spans (no_orbit_spans.csv -> {sat}/{NO_ORBIT}): {len(no_orbit[sat])}, {hours:.2f} h')
+        st, jumps = scan[sat]['stats'], scan[sat]['jumps']
+        log(f'  jump scan ({JUMP_THRESHOLD} m, {JUMP_NODES} + {JUMP_NODES} neighbours): {st["arcs"]} kept arcs, {st["nodes"]} nodes, '
+            f'{st["judged"]} judged, {st["not_judged"]} not judged (a leap second or two nodes at one time); {len(jumps)} jumps; '
+            f'spans added to {sat}/{NO_ORBIT} ({JUMP_REASON}): {st["spans"]}, {st["hours"]:.2f} h')
+        for j in jumps:
+            log(f'    jump {j["arc"]} ({j["set"]}) peak {j["peak"]} {j["peak_m"]:.3f} m, {j["nodes_above"]} nodes above, span '
+                f'{j["start"]:{TFMT}}..{j["end"]:{TFMT}}: {j["status"]}')
+        for s, e, _ in scan[sat]['spans']:
+            log(f'    jump span {s:{TFMT}}..{e:{TFMT}}')
         sets = sorted({a['set'] for a in r['kept'] + r['dropped']})
         summary[sat] = {'sets': {}, 'gaps': [[f'{a}', f'{b}'] for a, b in ranges(r['gaps'])],
                         'holes': [[f'{a:{TFMT}}', f'{b:{TFMT}}'] for a, b in r['holes']],
                         'partial': [{'start': f'{p["start"]:{TFMT}}', 'end': f'{p["end"]:{TFMT}}', 'winner': p['winner'],
                                      'other_sets': p['other_sets'], 'other_arcs': p['other_arcs']} for p in r['partial']],
                         'overrides': [[f'{d}', new, old] for d, old, new in r['overridden']],
-                        'no_orbit': {'spans': len(no_orbit[sat]), 'hours': round(hours, 2)}}
+                        'no_orbit': {'spans': len(no_orbit[sat]), 'hours': round(hours, 2)},
+                        'jump_scan': {'threshold_m': JUMP_THRESHOLD, 'neighbours': 2 * JUMP_NODES,
+                                      **{k: v for k, v in st.items() if k not in ('histogram', 'spans')},
+                                      'histogram': {s: {f'{1e-4 * 10 ** ((b - 1) / JUMP_BINS) if b else 0:.3g}': n
+                                                        for b, n in sorted(h.items())} for s, h in st['histogram'].items()},
+                                      'jumps': [dict(j, start=f'{j["start"]:{TFMT}}', end=f'{j["end"]:{TFMT}}') for j in jumps],
+                                      'spans': [[f'{s:{TFMT}}', f'{e:{TFMT}}'] for s, e, _ in scan[sat]['spans']]}}
         for s in sets:
             k = [a for a in r['kept'] if a['set'] == s]
             dr = [a for a in r['dropped'] if a['set'] == s]
@@ -781,8 +1014,9 @@ def main():
         arcs = delft_arcs(cache) + step_arcs(cache)
         log(f'arcs read: {len(arcs)}; fixes: {len(fixes)} OVERRIDE days, {sum(map(len, no_orbit.values()))} NO_ORBIT spans')
         result = select(arcs, fixes)
-        report(result, cache, no_orbit)
-        write_tree(result, no_orbit)
+        scan, refused = jump_scan(result, no_orbit)
+        report(result, cache, no_orbit, scan)
+        write_tree(result, refused)
     log(f'done in {time.time() - t0:.0f} s')
     with open(os.path.join(cache, 'build_log.txt'), 'w') as fh:
         fh.write('\n'.join(LOG) + '\n')

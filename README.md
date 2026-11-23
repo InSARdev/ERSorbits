@@ -9,7 +9,7 @@ whole day, or, on a day no set covers whole, the highest-ranked set that covers 
 auxiliary data server). Every orbit file is stored unchanged, one file per zip archive, in the folder of the day its arc
 starts, and every day that an orbit covers has an `index.csv` that lists the arcs to use for that day. Where a second producer
 shows the served orbit wrong, a curated list moves the day to a confirmed set or lists the span in `<SATELLITE>/no_orbit.csv`
-as having no confirmed orbit (see Fixes).
+as having no confirmed orbit, and where a served arc's own positions jump the build lists the jump there too (see Fixes).
 
 ## Sources
 
@@ -78,6 +78,8 @@ Not used:
   redistributable).
 - One non-orbit file in STEP's Envisat 2012 zip (`DOR_DOP_1POF-P20120406_000412_000859872113_00233_52832_3920.N1`, a Doppler
   product).
+- GFZ VER13 (ERS-1, ERS-2, Envisat) and IDS/CNES POE-F (Envisat) are not served: they are witnesses that confirm or refuse the
+  served orbits when the fix lists are made (see Fixes and Sources and Attribution).
 
 ## Gravity-model ranking
 
@@ -102,7 +104,7 @@ Envisat:
 
 | Rank | Gravity model | Model date | Source of the date | Sets in this repository (arcs on the server) | Reported radial accuracy (source) |
 |---|---|---|---|---|---|
-| 1 | GDR-D | 2012 | the files only: the publish times in their names, 2012-02-22 .. 2012-12-19; their headers name no gravity model or standard | `Doris/vor` (2002-04-09 .. 2012-04-11) | - |
+| 1 | EIGEN-GRGS_RL02bis_MEAN-FIELD (the CNES GDR-D standards; the `model` label of the set is `GDR-D`) | 2011 | CNES, "POD configuration GDR-D" (IDS), <https://ids-doris.org/documents/BC/data/POD_configuration_GDRD.pdf>, its GDR-D column: "EIGEN-GRGS_RL02bis_MEAN-FIELD (2011)". The `Doris/vor` files name no model (their publish times are 2012-02-22 .. 2012-12-19); they are the CNES GDR-D orbits: measured identical to the IDS GDR-D files (`ssaen102`, `ftp://doris.ign.fr/pub/doris/products/orbits/ssa/en1/`) to a median of 0.000 m 3-D (maximum 0.02-0.09 m) on 11 files of 2002-2012 | `Doris/vor` (2002-04-09 .. 2012-04-11) | - |
 | 2 | EIGEN-CG03C | 2005 | Förste, C., Flechtner, F., Schmidt, R., et al. (2005), "A new high resolution global gravity field model derived from combination of GRACE and CHAMP mission and altimetry/gravimetry surface gravity data", poster, EGU General Assembly 2005, Vienna; ICGEM model table, <https://icgem.gfz-potsdam.de/tom_longtime> | `ODR.ENVISAT1/eigen-cg03c` (2002-04-09 .. 2008-01-06), `POE.ENVISAT1/eigen-cg03c` (2005-12-30 .. 2006-07-02) | - |
 
 Accuracy sources: the Scharroo and Visser (1998) figures are their radial RMS orbit accuracy of Delft's ERS-1 and ERS-2 orbits of
@@ -172,8 +174,8 @@ ERS-2 stack takes another set:
 - 2002-03-11 .. 03-18: no set has an arc on 03-11 .. 03-14 (PRC included). On 03-15 .. 03-18 only the operational
   `ODR.ERS-2/dgm-e04.fd` does, and it serves those days.
 - 2006-01-01 .. 01-02, 2006-03-02 .. 03-03 and 2007-12-09 .. 12-10: `ers_precise_orb/ERS2` (PRC).
-The set is kept because it is the highest-ranked ERS-2 set. The OVERRIDE days of `fixes.csv` (see Fixes) move 15 more of its
-days: 14 to PRC and 1 to `dgm-e04`.
+The set is kept because it is the highest-ranked ERS-2 set. The OVERRIDE days of `fixes.csv` (see Fixes) move 21 more of its
+days: 20 to PRC and 1 to `dgm-e04`.
 
 **To find a scene's orbit:** read `<SATELLITE>/<YYYY>/<MM>/<DD>/index.csv` of the scene's UTC day (the day of its first line).
 All its rows belong to one set. Of the rows whose span (`start` <= scene start, scene end <= `end`) covers the scene, take the
@@ -233,7 +235,8 @@ Zip names: `ODR_<set>_<arc>.zip` holding the Delft `ODR.<arc>` (e.g. `ODR_eigen-
 Example: `ERS2/1997/12/18/index.csv`.
 
 `<SATELLITE>/no_orbit.csv` lists the spans where no orbit is confirmed (see Fixes), columns `start`, `end` (UTC,
-`YYYY-MM-DDTHH:MM:SS`) and `reason`, sorted by `start`. The build writes it from `no_orbit_spans.csv` at the root.
+`YYYY-MM-DDTHH:MM:SS`) and `reason`, sorted by `start`. The build writes it from `no_orbit_spans.csv` at the root and the
+position jumps its arc scan finds (reason `arc position jump`, see Fixes).
 
 ## Fixes
 
@@ -244,25 +247,62 @@ The per-day rule above is applied with two curated lists at the root of the repo
 - `no_orbit_spans.csv`: **NO_ORBIT spans**: `satellite`, `start`, `end`, `served` (the set the repository serves there),
   `evidence` and `reason`. The build writes them to `<SATELLITE>/no_orbit.csv`.
 
-**Method.** The orbits come from two independent producers: TU Delft (every `ODR.*` set; the Envisat `POE.*` set is not used as a witness: its frame is not identified and it differs from
-the ODR set of the same model by a median 12.5 m) and ESA (D-PAF's PRC
-for ERS, the DORIS orbits for Envisat). Every arc of every set, the sets the repository does not serve included (and Delft's
-`ODR.ERS-2/dgm-e09spx`), was decoded and sampled every 10 minutes. At every epoch the served orbit (the day's set; of its arcs
-covering the epoch, the one whose span centre is nearest) is compared with every arc of every other set covering the epoch:
-- an epoch is **confirmed** when a set of the other producer is within **10 m** of the served orbit;
-- it is **unconfirmed** when a set of the other producer covers the epoch and none is within 10 m;
-- where only one producer has an orbit (only Delft, or only ESA) nothing can be confirmed, and the orbit **stays served**;
+A third fix is computed by the build itself, the arc self-consistency scan (below): the spans of the position jumps inside served
+arcs are added to `<SATELLITE>/no_orbit.csv`.
+
+**Method.** Every served orbit is compared with the orbits of the other producers. The producers and their sets:
+- TU Delft (DEOS): every `ODR.*` set, the sets the repository does not serve included (and `ODR.ERS-2/dgm-e09spx`); the Envisat
+  `POE.*` set is not used as a witness: its frame is not identified and it differs from the ODR set of the same model by a
+  median 12.5 m;
+- ESA, D-PAF: the PRC orbits of ERS-1 and ERS-2;
+- ESA / IDS, CNES: the DORIS orbits of Envisat (`Doris/vor`, the CNES GDR-D orbits, see the ranking);
+- GFZ: the VER13 orbits of ERS-1, ERS-2 and Envisat, a **witness**;
+- CNES (IDS): the POE-F orbits of Envisat (`ssaen120`), a **witness**.
+
+The witnesses only confirm or refuse when the fix lists are made: they never serve a day, are never an OVERRIDE set, and their
+files are not stored in the repository or downloaded by `build.py` (see Sources and Attribution). Every arc of every set was
+decoded and sampled every 10 minutes (a witness arc's span is its first to last node). At every epoch the served orbit (the
+day's set; of its arcs covering the epoch, the one whose span centre is nearest) is compared with every arc of every other set
+covering the epoch:
+- an epoch is **confirmed** when a set of another producer is within **10 m** of the served orbit;
+- it is **unconfirmed** when a set of another producer covers the epoch and none is within 10 m;
+- where only one producer has an orbit nothing can be confirmed, and the orbit **stays served**;
 - epochs within 20 minutes of a leap second are not judged (the insardev reader refuses scenes whose interpolation nodes span a
   leap second).
+
+**Lineage.** The served DORIS orbits (GDR-D) and POE-F are both CNES solutions (the CNES SSALTO/POD team) computed from
+Envisat's DORIS tracking, so they count as one producer: POE-F confirms or refuses Delft's Envisat orbits, never the DORIS
+orbits. Measured (10-minute epochs where DORIS, POE-F and VER13 all exist, 2002-2012): in normal operation they behave like independent orbits (DORIS to POE-F 0.02-0.04 m
+median per year, DORIS to VER13 0.02-0.04 m; the three-cornered hat gives each orbit 0.01-0.04 m, VER13 0.18 m in 2002; DORIS
+and POE-F are the closest pair at 34-48 % of the epochs, against 33 % for three alike orbits), but where it decides they cannot
+be told apart: at all 936 epochs where Delft and GFZ agree within 10 m and DORIS is more than 10 m from both (2002-04 ..
+2002-11), POE-F has no orbit (its holes lie where DORIS is wrong; the IDS data centre's README: "due to some lack of DORIS
+measurements, the orbit of some periods were note [sic] re-processed"), and of the 19 epochs where DORIS is more than 0.5 m from both
+Delft and GFZ while they agree within 0.25 m, POE-F stays within 0.25 m of DORIS at 10. Counted as a producer of its own, POE-F
+would release 15 Envisat spans and shorten one (the 53 frames of 2002-12-18 among them, where POE-F is 0.0-0.1 m from DORIS and
+Delft 10-41 m) and refuse DORIS at its file join of 2010-10-25/26 (3 spans), where POE-F is the only other orbit. PRC (D-PAF's orbit,
+computed at GFZ) and VER13 (GFZ's reprocessing of 2018) count as two producers: VER13 is mostly closest to Delft's orbits, and PRC-VER13 is the
+closest pair at 9-32 % of the epochs where PRC, VER13 and a Delft set all exist.
+
+**The weight of counting PRC and VER13 apart.** Both are computed at GFZ. Unlike POE-F and the served DORIS orbits, which are both
+CNES solutions and 0.02-0.04 m apart (median per year), PRC and VER13 are two decades and two gravity models apart (PRC revision 2
+of 1995 with PGM055; VER13 of 2018 with EIGEN-6S4 in ITRF2014) and differ by 0.17-0.38 m (median per year over all 10-minute
+epochs where both have an arc; ERS-1 0.77 m in 1991). So they count as two producers. The choice decides at **1,084 served PRC
+epochs (180.7 h on 32 days)** that VER13 alone confirms while a Delft set covers the epoch and is more than 10 m away: ERS-1 326
+epochs (54.3 h) on 13 days of 1991-08-28 .. 1992-04-01, ERS-2 758 epochs (126.3 h) on 19 days of 1995-09-06 .. 2006-01-03 (1995 22,
+1998 32, 2000 245, 2003 185, 2004 93, 2006 181). There VER13 is a median 1.3 m from PRC (at most 9.6 m) and the nearest Delft set a
+median 15.5 m (ERS-1) and 17.8 m (ERS-2). Counting GFZ once would refuse these epochs. Another 1,438 served PRC epochs (ERS-1 1,223,
+ERS-2 215) have VER13 as their only other orbit; they would stay served either way (one producer).
 
 On a day whose served set has unconfirmed epochs, the day goes to the set that covers the whole day with the fewest unconfirmed
 epochs (the rule's set on a tie): an OVERRIDE when that is another set. The unconfirmed epochs that remain become NO_ORBIT
 spans, each from the 10-minute sample before its first unconfirmed epoch to the sample after its last (from midnight where the
 day before has another set), touching spans merged. Simulated over the whole archive with the overrides and the spans, every
-served epoch that has a second producer is confirmed within 10 m or lies inside a NO_ORBIT span (0 exceptions on 1,264,761
+served epoch that has a second producer is confirmed within 10 m or lies inside a NO_ORBIT span (0 exceptions on 1,486,825
 such epochs). The threshold is 10 m: over all years the sets agree to 0.04-0.50 m (median per pair of sets) and 0.14-2.3 m (95th
-percentile; ERS-1 `dgm-e04.fd` against PRC 18.6 m), and at 2 m, 1,296 ERS-1 spans (mostly 1991-92, solar maximum) were refused
-for differences of 2-5 m only (ERS-1 3,491 h refused at 2 m against 1,123 h at 10 m).
+percentile; ERS-1 `dgm-e04.fd` against PRC 18.6 m), VER13 agrees with the served orbits to 0.02-0.21 m (median per year; ERS-1
+0.34 m in 1992 and 0.92 m in 1991, solar maximum) and POE-F with DORIS to 0.02-0.04 m, and at 2 m, 1,296 ERS-1 spans (mostly
+1991-92) were refused for differences of 2-5 m only (with two producers, ERS-1 3,491 h refused at 2 m against 1,123 h at 10 m).
 
 A general rule was tried first and not adopted: "end a Delft arc where the set's next arc starts off the 00:00/12:00 grid" (a
 restart after a manoeuvre). It removes the error of 934 only, catches 900 and C97 in part and 995/996, B36, D20/D21, B55 and C07
@@ -274,34 +314,79 @@ time ±840 s.
 
 | | ERS-1 | ERS-2 | Envisat |
 |---|---|---|---|
-| OVERRIDE days | 27 (`dgm-e04` to PRC) | 45 (`dgm-e04` to PRC 30, `eigen-grace01s` to PRC 14, `eigen-grace01s` to `dgm-e04` 1) | 0 |
-| NO_ORBIT spans | 514 | 353 | 37 |
-| NO_ORBIT hours | 1,123.2 | 1,262.8 | 375.3 |
-| days touched by a span / refused whole | 138 / 5 | 134 / 18 | 40 / 8 |
-| served 10-min epochs with a second producer / confirmed | 300,226 / 294,194 | 664,488 / 657,323 | 300,047 / 297,846 |
-| served epochs with one producer only (served, not confirmable) | 49,936 | 183,356 | 221,958 |
-| frames whose sensing overlaps a span | 10,995 of 781,976 (1.41 %) | 9,750 of 1,690,064 (0.58 %) | 53 of 905,725 (0.006 %) |
-| frames whose reader window overlaps a span | 13,371 (1.71 %) | 11,043 (0.65 %) | 75 (0.008 %) |
+| OVERRIDE days | 25 (`dgm-e04` to PRC) | 56 (`dgm-e04` to PRC 35, `eigen-grace01s` to PRC 20, `eigen-grace01s` to `dgm-e04` 1) | 11 (DORIS to `eigen-cg03c`, 2002) |
+| NO_ORBIT spans | 394 | 249 | 39 |
+| NO_ORBIT hours | 893.3 | 1,108.3 | 215.8 |
+| days touched by a span / refused whole | 121 / 5 | 125 / 17 | 30 / 5 |
+| served 10-min epochs with a second producer / confirmed | 302,167 / 297,381 | 664,705 / 658,354 | 519,953 / 518,715 |
+| served epochs with one producer only (served, not confirmable) | 47,995 | 183,140 | 2,054 |
+| frames whose sensing overlaps a span | 7,101 of 781,976 (0.91 %) | 8,019 of 1,690,064 (0.47 %) | 53 of 905,725 (0.006 %) |
+| frames whose reader window overlaps a span | 8,649 (1.11 %) | 9,292 (0.55 %) | 75 (0.008 %) |
 
-The single-producer stretches are mostly ERS-1 PRC 1998-99, ERS-2 PRC 2008-2011, Envisat DORIS 2008-2012 and `eigen-cg03c`
-before DORIS in 2002, and ERS-2 2002-03 (below).
+What the witnesses changed against the two-producer lists (Delft against ESA only): refused hours 1,123.2 to 893.3 (ERS-1),
+1,262.8 to 1,108.3 (ERS-2) and 375.3 to 215.8 (Envisat); frames whose sensing overlaps a span 3,980 released and 86 newly
+refused (ERS-1, released in 1991-93 and 1995; the 86 on 1992-01-01, back with `dgm-e04` after its override was removed),
+1,731 released (ERS-2), none (Envisat); OVERRIDE days 27, 45 and 0 before: ERS-1 14 kept, 13 removed (with VER13,
+`dgm-e04` is unconfirmed at no epoch on 8 of them, 6 of these a tie with PRC, and at fewer epochs than PRC on 5) and 11 new, ERS-2 45 kept and 11 new, Envisat 11 new (2002-04-19 .. 22, 05-27, 06-11, 09-10, 09-11 and 11-18 .. 20: VER13 confirms `eigen-cg03c` against
+DORIS). Most epochs still refused have no witness arc: VER13's arcs stop at manoeuvres, where Delft and PRC disagree, and it
+ends on 2006-02-27 (ERS-2).
 
-**Named cases**, with the measured distance of the served orbit to the other producer (ERS-2 arcs are `eigen-grace01s` arcs):
+The single-producer stretches are mostly ERS-1 PRC 1998-99 (46,313 epochs) and ERS-2 PRC 2008-2011 (180,712), after VER13
+ends; the others are short: ERS-1 PRC 1991 (315 epochs), ERS-1 `dgm-e04.fd` 1996 and 2000, ERS-2 PRC 2006-07 (428), ERS-2 2001-02 (`dgm-e04`, `dgm-e04.fd`, and `eigen-grace01s` in
+2002-03, below), Envisat DORIS 2008-2012 at VER13's holes (1,906) and `eigen-cg03c` in 2002 (148).
+
+**Arc self-consistency scan (`build.py`).** The comparison above samples every arc every 10 minutes (one in 10 nodes of a Delft
+or DORIS arc, one in 20 of a PRC arc), so a jump inside an arc between two samples passes it. The build therefore compares every node of every
+kept arc (inside its span) with the 8-point Lagrange interpolation of its 4 + 4 neighbours (on uneven node times with the weights
+of those times; a node whose neighbours span a leap second, or hold two nodes at one time, is not judged). Over the 27.0 M judged
+nodes the bulk of the residuals ends at 2.5 mm (PRC, 30 s nodes in mm; 99.9 % point 1.7 mm), 2.5 cm (Delft ODR, 60 s nodes in
+1e-7 degree; 19 mm) and 1.6 cm (DORIS, 60 s nodes in mm; 8 mm), where the count per fifth of a decade drops by one to two and a
+half orders; above it a flat tail of tens to hundreds of nodes per fifth of a decade reaches 659 km. The threshold is **0.5 m**,
+20 times the largest bulk end. The rule:
+- a run of nodes above 0.5 m (runs at most 8 nodes apart are one) is a **position jump**; its span runs from 4 nodes before
+  its first node above the threshold to 4 nodes after its last;
+- a jump is **served** when, at a node of its span, the arc is the served orbit (the day's index lists it and, of the arcs it
+  lists covering the node, its span centre is the nearest, as in the comparison above);
+- the span of a served jump is added to `<SATELLITE>/no_orbit.csv` with the reason `arc position jump`, without the parts
+  `no_orbit_spans.csv` already lists (touching spans merged); the reader refuses a scene there as for any other span;
+- a jump in a stretch that another arc serves is listed only;
+- every jump is listed in the build log and in `summary.json` (arc, peak time and residual, nodes above, span, status), with the
+  residual histogram per set.
+
+| | ERS-1 | ERS-2 | Envisat |
+|---|---|---|---|
+| kept arcs / judged nodes | 685 / 6,197,490 | 1,665 / 15,021,368 | 3,620 / 5,805,504 |
+| position jumps | 118 | 198 | 42 |
+| served: span added whole / added in part / inside a NO_ORBIT span already | 10 / 28 / 37 | 29 / 11 / 40 | 19 / 3 / 16 |
+| not served: another arc serves the stretch / no day index lists the arc there | 29 / 14 | 49 / 69 | 1 / 3 |
+| spans added (`arc position jump`) | 38, 3.57 h | 40, 4.59 h | 22, 3.82 h |
+| peak residual of the jumps with an added span, median / max | 2.94 m / 8.1 km | 3.62 m / 82.2 m | 1.22 m / 31.0 m |
+| frames whose sensing overlaps an added span | 31 (29 of them already refused, their window overlapping a NO_ORBIT span) | 0 | 0 |
+| frames newly refused (their reader window overlaps an added span and no NO_ORBIT span) | 116 | 327 | 0 |
+
+With the added spans, the frames whose sensing overlaps a span of `no_orbit.csv` are 7,132 (ERS-1), 8,019 (ERS-2) and 53
+(Envisat).
+
+**Named cases**, with the measured distance of the served orbit to the other producers (ERS-2 arcs are `eigen-grace01s` arcs).
+B36, D20/D21, C97, B55 and C07 lie after VER13's end (2006-02-27) and are unchanged by the witnesses:
 
 | Case | Fix | Measured |
 |---|---|---|
 | ERS-2 B36, 2006-03-01 | NO_ORBIT 2006-03-01T01:00 .. 08:50 (5 spans), 2006-03-01T09:00 .. 03-02T00:10 | B36 10.1-22.1 m from PRC in the morning spans, then up to 15.8 km; PRC (the set of 03-02) 16.2 km from `eigen-grace01s` at 03-02T00:00 |
 | ERS-2 D20/D21, 2007-12-08 | NO_ORBIT 2007-12-04T02:40 .. 12-09T12:10 (776 epochs); 8 spans on 2007-12-11 00:00 .. 13:20 | D20/D21 11.0 m to 42.8 km from PRC; PRC (the set of 12-09) 51-340 m from `eigen-grace01s`; D23 on 12-11 10.7-38.9 m |
 | ERS-2 C97, 2007-09 | NO_ORBIT 2007-09-11T09:50 .. 09-13T09:40 and 2007-09-14T02:10 .. 09-16T01:10, plus 12 spans of 10-20 min to 1.5 h between 09-10 and 09-16 | C96/C97 10.1-643 m from PRC, then C97/C98 up to 281.6 km; the short spans 10.1-16.5 m |
-| ERS-2 900, 2003-11 | NO_ORBIT 2003-11-25T14:20 .. 11-27T08:00 | 900 120 m to 98.4 km from PRC |
-| ERS-2 934, 2004-03 | NO_ORBIT 2004-03-23T10:10 .. 03-24T01:20; OVERRIDE 2004-03-24 to PRC | 934 70 m to 14.6 km from PRC (18.1 km on 03-24 00:00-02:30); PRC 10.4-48.3 m from `eigen-grace01s` inside the span and within 10 m at the other 136 epochs of 03-24 |
-| ERS-2 995/996, 2004-10 | 995: no fix (within 10 m). 996: OVERRIDE 2004-10-24 to PRC; NO_ORBIT 2004-10-26T10:00 .. 10-27T04:10; OVERRIDE 2004-10-27 to PRC; NO_ORBIT 10-27T04:40 .. 05:50 and 06:50 .. 07:20 | 996 up to 13.5 m from PRC on 10-24 (PRC within 2.98 m of `eigen-grace01s` all day); 996 55.8 m to 19.9 km on 10-26/27; 996+997 up to 22.4 km on 10-27; PRC 10.1-15.2 m in the 10-27 morning spans |
+| ERS-2 900, 2003-11 | NO_ORBIT 2003-11-25T14:20 .. 11-26T16:10; OVERRIDE 2003-11-26 and 11-27 to PRC | 900 120 m to 98.4 km from PRC (no VER13 arc from 11-25 14:20); on 11-26 VER13 has an arc at 47 of the 144 epochs (from 16:10, and one before), 0.17-0.96 m from PRC; before 16:10 PRC is 22.9-59.6 km from 900 and unconfirmed; on 11-27 PRC within 1.53 m of VER13 all day |
+| ERS-2 934, 2004-03 | NO_ORBIT 2004-03-23T10:10 .. 03-24T01:20; OVERRIDE 2004-03-24 to PRC | 934 70 m to 14.6 km from PRC (18.1 km on 03-24 00:00-02:30); PRC 10.4-48.3 m from `eigen-grace01s` inside the span and within 10 m at the other 136 epochs of 03-24; VER13 within 0.68 m of PRC on 03-24 where it has an arc |
+| ERS-2 995/996, 2004-10 | 995: no fix (within 10 m). 996: OVERRIDE 2004-10-24 to PRC; NO_ORBIT 2004-10-26T10:00 .. 10-27T04:10; OVERRIDE 2004-10-27 to PRC; NO_ORBIT 10-27T04:40 .. 05:50 and 06:50 .. 07:20 | 996 up to 13.5 m from PRC and 10.9 m from VER13 on 10-24 (unconfirmed at 6 epochs; PRC within 2.98 m of `eigen-grace01s` and 3.49 m of VER13 all day); 996 55.8 m to 19.9 km on 10-26/27; 996+997 up to 22.4 km on 10-27 (VER13 within 0.49 m of PRC there); PRC 10.1-15.2 m in the 10-27 morning spans |
 | ERS-2 B55, 2006-05 | NO_ORBIT 2006-05-04T01:00 .. 07:00 (4 spans) and 2006-05-04T07:20 .. 05-05T12:00; OVERRIDE 2006-05-05 and 2006-05-06 to PRC | B55 10.2-24.9 m, then 11.9-82.2 m from PRC; PRC 41.6-129 m from `eigen-grace01s` in the span; B55 up to 195 m (05-05) and 288 m (05-06); PRC within 0.86 m on 05-06 |
 | ERS-2 C07, 2006-11 | NO_ORBIT 2006-11-03T10:00 .. 11-04T09:10; OVERRIDE 2006-11-04 to PRC; 9 PRC spans on 11-04 09:50 .. 23:50; short spans on 11-02 and 11-05 | C07 329 m to 28.3 km from PRC, C07+C08 up to 39.0 km; PRC 10.6-36.2 m from `eigen-grace01s` in the 11-04 spans; C07/C08 10.2-17.8 m on 11-02 and 11-05 |
-| ERS-2 B19, 2006-01-01 (leap second) | NO_ORBIT 2006-01-01T00:20 .. 12:10 | the served PRC is 7,535-7,590 m from B19, the only other-producer arc. B19 has uniform 60 s labels over the leap second: its node labelled 00:00:00 is the inserted second 23:59:60, so its labels after the leap are 1 s ahead of UTC (PRC agrees with B19 at label + 1 s within 14-22 m, at the label 7,555-7,569 m off). The insardev reader does not correct B19's labels; it refuses scenes whose interpolation nodes span the leap, so B19's nodes after the leap are never read. At 10 m the span stays, as neither orbit is confirmed |
-| Envisat DORIS periods | NO_ORBIT 2002-04-19T04:30 .. 04-22T23:00; 2002-09-10T00:30 .. 09-11T03:10; 2002-11-18T18:00 .. 11-20T03:20; 2006-09-07T15:40 .. 09-11T11:00 | DORIS 10.1 m to 1.86 km, 17.0 m to 4.46 km, 10.3-134 m and 28.3 m to 4.31 km from `eigen-cg03c`; DORIS has position breaks of 0.83-2.24 km inside its files at 2002-04-19 06:45, 2002-09-11 03:01 and 2006-09-11 10:44; `eigen-cg03c` is not confirmed either (the only other producer), so no day moves |
-| Envisat 2007-09-24 .. 27 | NO_ORBIT 2007-09-24T13:00 .. 09-27T15:10 (444 epochs) | DORIS 10.7 m to 2.66 km from `eigen-cg03c`, with a break inside DORIS at 2007-09-26 21:51; no set confirmed |
-| ERS-2 2002-03-08 .. 10 | none: served (`eigen-grace01s` 721) | no PRC arc covers it (one producer). 721 is 0.0-0.3 m from `dgm-e04`, `dgm-e04.fd` and `jgm3` at some epochs and up to 917-967 m at others; `grim5-c1` 11.9 m to 13.2 km. Single-producer, so it stays served; so does 2002-03-19 (`eigen-grace01s` against `jgm3`, Delft only) |
+| ERS-2 B19, 2006-01-01 (leap second) | none: the served PRC is confirmed by VER13 (the two-producer lists refused 2006-01-01T00:20 .. 12:10). 2006-01-03: OVERRIDE to PRC (B21 up to 50.7 m from PRC, 49.1 m from VER13), NO_ORBIT 01-03T01:50 .. 04:00 (PRC 14.3-42.9 m from B21, no VER13 arc) | VER13 is 0.09-0.98 m from PRC at all 71 epochs of the former span; the served PRC is 7,535-7,590 m from B19. B19 has uniform 60 s labels over the leap second: its node labelled 00:00:00 is the inserted second 23:59:60, so its labels after the leap are 1 s ahead of UTC (PRC agrees with B19 at label + 1 s within 14-22 m, at the label 7,555-7,569 m off). The insardev reader does not correct B19's labels; it refuses scenes whose interpolation nodes span the leap, so B19's nodes after the leap are never read. With Delft and ESA only, the span stood at 10 m, as neither orbit was confirmed |
+| Envisat DORIS periods, 2002 | OVERRIDE to `eigen-cg03c`: 2002-04-19 .. 22, 05-27, 06-11, 09-10, 09-11, 11-18 .. 20; NO_ORBIT 2002-04-19T04:50 .. 10:30 (3 spans) and 2002-09-10T00:30 .. 09-11T03:10 (8 spans) where `eigen-cg03c` is not confirmed | DORIS up to 1.86 km (04-19 .. 22), 64.9 m (05-27), 13.5 m (06-11), 4.46 km (09-10/11) and 134 m (11-18 .. 20) from `eigen-cg03c`, and alike from VER13; the two agree: `eigen-cg03c` within 7.4 m of VER13 on 04-20 and within 0.15-0.82 m on 04-21, 04-22, 05-27, 06-11 and 11-18 .. 20; in the spans `eigen-cg03c` is 10.1-26.2 m from VER13 or has no VER13 arc. POE-F has no arc at any unconfirmed DORIS epoch of these days. DORIS has position breaks of 0.83-2.24 km inside its files at 2002-04-19 06:45 and 2002-09-11 03:01 |
+| Envisat 2006-09-07 .. 11 | NO_ORBIT 2006-09-07T15:40 .. 09-11T11:00 | DORIS 28.3 m to 4.31 km from `eigen-cg03c`, with a break inside DORIS at 2006-09-11 10:44; VER13 and POE-F have arcs at 1 and 3 of its 549 epochs only (their holes); `eigen-cg03c` is not confirmed either, so no day moves |
+| Envisat 2007-09-24 .. 27 | NO_ORBIT 2007-09-24T13:00 .. 09-27T15:10 (444 epochs) | DORIS 10.7 m to 2.66 km from `eigen-cg03c`, with a break inside DORIS at 2007-09-26 21:51; no VER13 or POE-F arc; no set confirmed |
+| Envisat 2002-12-18 | NO_ORBIT 05:30 .. 19:10 and 3 spans to 21:30 (the 53 refused Envisat frames) | DORIS 10.0-40.6 m from `eigen-cg03c`; POE-F 0.0-0.1 m from DORIS (the same producer: no confirmation); no VER13 arc in the spans |
+| Envisat 2010-10-25 .. 26 | none: served (DORIS) | the only other orbit is POE-F (the same producer), 10.1-178 m from DORIS at 18 epochs across DORIS's file join; VER13 has a hole there (2010-10-22 .. 26). Single producer, so it stays served |
+| ERS-2 2002-03-08 .. 10 | none: served (`eigen-grace01s` 721) | no PRC arc covers it, and VER13 only 23 of its 361 epochs (0.13-0.55 m from 721; its hole 2002-03-08 .. 23). 721 is 0.0-0.3 m from `dgm-e04`, `dgm-e04.fd` and `jgm3` at some epochs and up to 917-967 m at others; `grim5-c1` 11.9 m to 13.2 km. Single-producer, so it stays served; so does 2002-03-19 (`eigen-grace01s` against `jgm3`, Delft only) |
 
 **How a downloader uses `no_orbit.csv`.** Read `<SATELLITE>/no_orbit.csv` once. For a scene, take its orbit window (the scene's
 first and last line times extended by the interpolation margin) and refuse the scene with a warning when the window overlaps
@@ -316,18 +401,18 @@ Arcs per set: all arcs on the server, the kept and dropped ones, the span of the
 
 | Satellite | Set | Model | Produced | Arcs span | Arcs | Kept | Dropped | Kept span | Days won |
 |---|---|---|---|---|---|---|---|---|---|
-| ERS-1 | `ODR.ERS-1/dgm-e04` | DGM-E04 | 1996-11-13 .. 1998-12-27 | 1991-07-30 .. 1996-06-06 | 506 | 506 | 0 | 1991-07-30 .. 1996-06-06 | 1746 |
+| ERS-1 | `ODR.ERS-1/dgm-e04` | DGM-E04 | 1996-11-13 .. 1998-12-27 | 1991-07-30 .. 1996-06-06 | 506 | 506 | 0 | 1991-07-30 .. 1996-06-06 | 1748 |
 | ERS-1 | `ODR.ERS-1/dgm-e04.fd` (operational) | DGM-E04 | 1999-11-15 .. 2004-05-14 | 1996-06-04 .. 2000-03-12 | 91 | 4 | 87 | 1996-07-23 .. 2000-03-12 | 11 |
-| ERS-1 | `ers_precise_orb/ERS1` (PRC) | PGM055 | 1995-03-24 | 1991-07-27 .. 2000-03-08 | 516 | 178 | 338 | 1991-07-27 .. 2000-03-08 | 677 |
+| ERS-1 | `ers_precise_orb/ERS1` (PRC) | PGM055 | 1995-03-24 | 1991-07-27 .. 2000-03-08 | 516 | 175 | 341 | 1991-07-27 .. 2000-03-08 | 675 |
 | ERS-1 | `ODR.ERS-1/jgm3` | JGM-3 | 1996-02-13 .. 1997-04-21 | 1992-04-10 .. 1996-06-06 | 433 | 0 | 433 | - | 0 |
-| ERS-2 | `ODR.ERS-2/eigen-grace01s` | EIGEN-GRACE01S | 2007-01-24 .. 2008-02-26 | 2001-12-21 .. 2008-01-24 | 629 | 629 | 0 | 2001-12-21 .. 2008-01-24 | 2195 |
+| ERS-2 | `ODR.ERS-2/eigen-grace01s` | EIGEN-GRACE01S | 2007-01-24 .. 2008-02-26 | 2001-12-21 .. 2008-01-24 | 629 | 629 | 0 | 2001-12-21 .. 2008-01-24 | 2189 |
 | ERS-2 | `ODR.ERS-2/grim5-c1` | GRIM5-C1 | 2003-01-30 .. 2003-04-25 | 2001-12-21 .. 2003-03-27 | 128 | 0 | 128 | - | 0 |
-| ERS-2 | `ODR.ERS-2/dgm-e04` | DGM-E04 | 1996-12-04 .. 2003-12-09 | 1995-04-28 .. 2003-08-14 | 857 | 691 | 166 | 1995-04-28 .. 2003-04-06 | 2386 |
+| ERS-2 | `ODR.ERS-2/dgm-e04` | DGM-E04 | 1996-12-04 .. 2003-12-09 | 1995-04-28 .. 2003-08-14 | 857 | 691 | 166 | 1995-04-28 .. 2003-04-06 | 2381 |
 | ERS-2 | `ODR.ERS-2/dgm-e04.fd` (operational) | DGM-E04 | 2001-11-27 .. 2003-12-04 | 2001-11-20 .. 2003-08-21 | 180 | 1 | 179 | 2002-03-15 .. 2002-03-21 | 4 |
-| ERS-2 | `ers_precise_orb/ERS2` (PRC) | PGM055 | 1995-03-24 | 1995-04-28 .. 2011-07-06 | 1259 | 335 | 924 | 1995-05-06 .. 2011-07-06 | 1305 |
+| ERS-2 | `ers_precise_orb/ERS2` (PRC) | PGM055 | 1995-03-24 | 1995-04-28 .. 2011-07-06 | 1259 | 344 | 915 | 1995-05-06 .. 2011-07-06 | 1316 |
 | ERS-2 | `ODR.ERS-2/jgm3` | JGM-3 | 1996-12-05 .. 2003-06-16 | 1995-04-28 .. 2003-03-27 | 817 | 0 | 817 | - | 0 |
-| Envisat | `Doris/vor` | GDR-D | 2012-02-22 .. 2012-12-19 | 2002-04-09 .. 2012-04-11 | 3610 | 3610 | 0 | 2002-04-09 .. 2012-04-11 | 3613 |
-| Envisat | `ODR.ENVISAT1/eigen-cg03c` | EIGEN-CG03C | 2007-01-19 .. 2008-02-07 | 2002-04-09 .. 2008-01-06 | 599 | 6 | 593 | 2002-04-09 .. 2002-06-13 | 15 |
+| Envisat | `Doris/vor` | GDR-D | 2012-02-22 .. 2012-12-19 | 2002-04-09 .. 2012-04-11 | 3610 | 3607 | 3 | 2002-04-09 .. 2012-04-11 | 3602 |
+| Envisat | `ODR.ENVISAT1/eigen-cg03c` | EIGEN-CG03C | 2007-01-19 .. 2008-02-07 | 2002-04-09 .. 2008-01-06 | 599 | 13 | 586 | 2002-04-09 .. 2002-11-24 | 26 |
 | Envisat | `POE.ENVISAT1/eigen-cg03c` | EIGEN-CG03C | 2007-07-24 | 2005-12-30 .. 2006-07-02 | 52 | 0 | 52 | - | 0 |
 
 The JGM-3 and GRIM5-C1 sets and the Envisat POE set win no day: a higher-ranked set covers every day they cover whole.
@@ -335,9 +420,9 @@ The JGM-3 and GRIM5-C1 sets and the Envisat POE set win no day: a higher-ranked 
 Days covered per satellite: ERS-1 2,434 (2,431 covered whole by a set, 3 not), ERS-2 5,890 (5,885 and 5), Envisat 3,628
 (3,625 and 3).
 
-Periods (UTC days) and the set that serves them by the rule; the 72 OVERRIDE days of `fixes.csv` (see Fixes) are served by
-the set listed there instead: 27 ERS-1 days of 1991-08 .. 1995-03 by PRC, 44 ERS-2 days of 1995-05 .. 2007-02 by PRC and
-ERS-2 2003-04-03 by `dgm-e04`:
+Periods (UTC days) and the set that serves them by the rule; the 92 OVERRIDE days of `fixes.csv` (see Fixes) are served by
+the set listed there instead: 25 ERS-1 days of 1991-08 .. 1995-03 by PRC, 55 ERS-2 days of 1995-05 .. 2007-02 by PRC,
+ERS-2 2003-04-03 by `dgm-e04`, and 11 Envisat days of 2002-04 .. 2002-11 by `ODR.ENVISAT1/eigen-cg03c`:
 
 | Satellite | Days | Set |
 |---|---|---|
@@ -389,9 +474,11 @@ every network step has a timeout and retries. The full download is about 2.95 GB
 The build writes `CACHE_DIR/build_log.txt` (the kept and dropped arcs with reasons, the gaps, the number of days of each kind,
 and the days no set covers whole) and `CACHE_DIR/summary.json`. It rewrites only files whose content changed and lists the
 files under `ERS1/`, `ERS2/` and `ENVISAT/` that it no longer produces; remove those with `git rm`. It reads the curated
-`fixes.csv` and `no_orbit_spans.csv` (see Fixes) and writes `<SATELLITE>/no_orbit.csv`.
+`fixes.csv` and `no_orbit_spans.csv` (see Fixes) and writes `<SATELLITE>/no_orbit.csv` from the latter and the position
+jumps of its arc self-consistency scan (see Fixes), which reads every kept arc once more. The two lists were made with the witness orbits
+(GFZ VER13, IDS POE-F; see Fixes), which `build.py` neither downloads nor reads.
 
-The repository is about 1.13 GB in 17,923 files (ERS1 0.28 GB, ERS2 0.58 GB, ENVISAT 0.27 GB; no file above 50 MB).
+The repository is about 1.13 GB in 17,933 files (ERS1 0.27 GB, ERS2 0.59 GB, ENVISAT 0.27 GB; no file above 50 MB).
 
 ## Sources and Attribution
 
@@ -418,7 +505,23 @@ The repository is about 1.13 GB in 17,923 files (ERS1 0.28 GB, ERS2 0.58 GB, ENV
     own header names only the product (`ERS1.ORB.PRC`, `ERS2.ORB.PRC`).
   - the Envisat DORIS precise orbits, `DOR_VOR_AX` (`Doris/vor`), published (the `P` time in the file names) between
     2012-02-22 and 2012-12-19. The files' own header names the processing centre as `O_M`, the station as `ORBITE MISSION`
-    and the software as `orbito/4.2`; no producer is named beyond these fields.
+    and the software as `orbito/4.2`; no producer is named beyond these fields. Measured, they are the CNES GDR-D orbits that
+    the International DORIS Service (IDS) distributes as `ssaen102` (see the ranking).
+- **Witnesses, not stored or served.** Two more orbit sets were used only to confirm or refuse the served orbits when
+  `fixes.csv` and `no_orbit_spans.csv` were made (see Fixes); no file of theirs is in this repository:
+  - GFZ VER13 SLCCI precise orbits of ERS-1, ERS-2 and Envisat (SP3, ITRF2014, EIGEN-6S4 gravity model): Rudenko, S., Schöne,
+    T., Esselborn, S., Neumayer, K. H. (2018): GFZ VER13 SLCCI precise orbits of altimetry satellites ERS-1, ERS-2, Envisat,
+    TOPEX/Poseidon, Jason-1, and Jason-2 in the ITRF2014 reference frame. GFZ Data Services.
+    [doi:10.5880/GFZ.1.2.2018.003](https://doi.org/10.5880/GFZ.1.2.2018.003). Licensed under CC BY 4.0
+    (<https://creativecommons.org/licenses/by/4.0/>), provided as is, without warranties (Section 5 of the licence). Files from
+    `https://datapub.gfz-potsdam.de/download/10.5880.GFZ.1.2.2018.003/`; the dataset is supplementary material to Rudenko et
+    al. (2019), Solid Earth 10, 293-305, [doi:10.5194/se-10-293-2019](https://doi.org/10.5194/se-10-293-2019).
+  - Envisat POE-F orbits (`ssaen120`, version 20, POE-F standards: EIGEN-GRGS.RL04-v1.MEAN-FIELD gravity model, ITRF2014)
+    computed by the CNES SSALTO/POD team and distributed by the International DORIS Service (IDS) data centre at IGN,
+    `ftp://doris.ign.fr/pub/doris/products/orbits/ssa/en1/` (also at CDDIS,
+    [doi:10.5067/DORIS/DORIS_IDSORB_001](https://doi.org/10.5067/DORIS/DORIS_IDSORB_001)). The DORIS results used here are
+    acknowledged to the International DORIS Service (IDS), as its citation page (<https://ids-doris.org/citation.html>) asks:
+    IDS, Willis et al. (2015), IAG Symposia 143, 631-639, [doi:10.1007/1345_2015_164](https://doi.org/10.1007/1345_2015_164).
 - **Terms.** The orbit files remain the work of their producers and are redistributed unchanged, as published on these public
   servers. The scripts of this repository are under the [LICENSE](LICENSE) (BSD 3-Clause).
 - **Serving.** The files are also served at `https://ersorbits.insar.dev/<path>` (a cache in front of this repository), e.g.
