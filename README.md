@@ -11,6 +11,13 @@ starts, and every day that an orbit covers has an `index.csv` that lists the arc
 shows the served orbit wrong, a curated list moves the day to a confirmed set or lists the span in `<SATELLITE>/no_orbit.csv`
 as having no confirmed orbit, and where a served arc's own positions jump the build lists the jump there too (see Fixes).
 
+The repository holds two parts:
+- **The orbits** (sections Sources to Rebuild): how the orbit files are chosen from their sources, checked against second
+  producers, and laid out, by `build.py`.
+- **The scene index** (section Scene index): ESA's public catalogue of Envisat ASAR and ERS-1/2 SAR single-look complex scenes,
+  processed with these orbits into static scene lists by track and by 5 x 5 degree tile, by `build_scenes.py`. InSAR.dev's
+  `ESA.search` and `ESA.download` read them.
+
 ## Sources
 
 | Satellite | Source | Set | Files | Production date (`produced`) |
@@ -441,6 +448,14 @@ ERS-2 2003-04-03 by `dgm-e04`, and 11 Envisat days of 2002-04 .. 2002-11 by `ODR
 | Envisat | 2002-04-10 .. 2002-05-27, 2002-06-11 .. 2010-10-31, 2010-11-29 .. 2012-04-11 | `Doris/vor` |
 | Envisat | 2010-11-01 .. 2010-11-28 | no orbit (gap) |
 
+### Figures
+
+![The orbit set served on each UTC day](docs/orbit_sets.png)
+
+`docs/orbit_sets.png`: per satellite, the set whose arcs the day's `index.csv` lists, for every UTC day (one colour per set, the
+days each set serves in the legend, a run of a few days drawn at least a hairline wide); `no orbit`: the days between the first
+and the last served day that have no `index.csv`; the lower row: the UTC days that a span of `<SATELLITE>/no_orbit.csv` touches.
+
 ## Gaps
 
 Spans that no arc of any set covers, to the second (UTC), and the whole days inside them:
@@ -479,6 +494,241 @@ jumps of its arc self-consistency scan (see Fixes), which reads every kept arc o
 (GFZ VER13, IDS POE-F; see Fixes), which `build.py` neither downloads nor reads.
 
 The repository is about 1.13 GB in 17,933 files (ERS1 0.27 GB, ERS2 0.59 GB, ENVISAT 0.27 GB; no file above 50 MB).
+
+## Scene index
+
+The scene index lists every Envisat ASAR (`ASA_IMS_1P`) and ERS-1/2 SAR (`SAR_IMS_1P`) single-look complex scene that ESA's
+catalogue holds and that the orbits of this repository can place. It gives each scene a stable name, its acquisition span and
+the ground footprint of its product predicted from the orbit. A search reads a few small files instead of querying ESA's
+catalogue.
+
+### The catalogue
+
+- **Source:** ESA's public catalogue SO-Cat, which needs no account. `build_scenes.py --harvest` sends one request per collection
+  and calendar month for every field. It checks each answer's row count against ESA's count header and keeps the answers in the
+  build's cache folder; they are not committed.
+- **Records kept:** the archive records, each productId once:
+  - the regular scenes: records whose span from the ascending node covers their acquisition;
+  - the ERS extra records: records whose span from the ascending node is longer than their acquisition by 1.00 s (+-0.05 s)
+    and that were last updated before 2025-09-01.
+- **Records left out:**
+  - the delivery records ESA created in 2025-09 for copies it delivered;
+  - records longer than 15.1 s;
+  - the phases without repeat passes: ERS-1 E, F and R (R is the roll-tilt campaign of 1992-04) and ERS-2 X.
+
+### Positions from the orbits
+
+- **The precise node:** for every orbit that holds a kept record, the time of its ascending node (the orbit crossing the
+  equator northbound, Earth-fixed z = 0) is computed from the orbit files of this repository.
+- **The catalogue node:** the median, over the orbit's regular scenes, of their acquisition begin minus their catalogue time
+  from the node. The regular scenes of one orbit agree within 1 ms.
+- **ERS orbits left out:** an ERS orbit whose catalogue node is more than 0.5 s off its precise node is not listed. Its
+  catalogue times cannot be trusted. On the 2026-11-25 catalogue these were 65 orbits, off by 0.52 to 10.5 s and drifting
+  linearly in time: ERS-1 1991-11, ERS-2 2008-10 and 2009-01, and single orbits. The build's summary names them all. In every
+  other ERS orbit the two nodes agree: median 0.07 ms, 1st and 99th percentiles -14 and +13 ms.
+- **Envisat:** the catalogue node lies off the precise node by 0.41 s in median absolute value, up to 2.3 s, in a yearly
+  pattern. That is the convention of ESA's catalogue, not an error of single orbits, so no Envisat orbit is left out by it.
+- **No orbit, no scene:** a scene that no orbit of this repository covers (see Gaps, and the spans of `no_orbit.csv`) is not
+  listed. Its position could not be checked. On the 2026-11-25 catalogue, besides the orbits in the gaps, these are 1,864 ERS
+  records (ERS-1 692, ERS-2 1,172) that the reader's orbit selection refuses (a span of `no_orbit.csv`, a jump between arcs, a
+  day without an index); `CACHE_DIR/footprints/no_orbit.tsv` names them with the reason. Every Envisat record has an orbit.
+
+### Names
+
+Each scene is named from its own fields and two constants of its mission phase, the track count N and the track constant c
+(`PHASES` in `build_scenes.py`: ERS 35-day phases N 501, the 3-day phases N 43, Envisat phase 2 N 501 and phase 3 N 431):
+- **code start a:** the scene's time after its orbit's node, on ESA's catalogue grid:
+  - a regular or off-grid scene: its catalogue time from the ascending node, as given;
+  - an ERS extra record: its acquisition begin minus the orbit's catalogue node, or minus the precise node in an orbit without
+    a regular scene. Its catalogue time lies 1 s or 0 s before its data, so the begin places it.
+- **frame:** f = floor(7200 a / T + 0.5) + 9, with T the phase's nominal nodal period. A regular scene on ESA's grid gets its
+  slot centre 18 k + 9.
+- **node crossing:** f < 0 moves the scene to the previous orbit, f > 7199 to the next one, with that orbit's own node.
+- **track:** (orbit - c - 1) mod N + 1, from the orbit after the move. It is written with 3 digits in Envisat and the ERS
+  35-day phases (`036`), and as the phase letter and 4 digits in the ERS 3-day phases (`A0001`); the code, the track folder and
+  the tile files use this form.
+- **code:** `<ENV|ER1|ER2>_<track>_<frame:04d>_<swath>_<YYYYMMDD>_<pol>`, for example `ER2_129_0819_IS2_19970512_VV`.
+- **folder:** the slot that holds the frame, `18 x (frame // 18) + 9`. A scene off the grid lies in the folder of the slot that
+  holds its centre.
+
+A regular or off-grid code depends on its own record only. An extra record's code depends on its orbit's catalogue node, which
+the orbit's regular scenes give within 1 ms (a frame is about 0.84 s), so a catalogue change does not rename a remaining scene.
+
+### Every granule listed
+
+Every record that passes the filters above is a row, one per productId. Nothing is chosen among overlapping scenes: a search
+returns them all, and the client filters them (by date, by overlap, by what it already holds).
+
+- **Shared codes:** ESA sometimes catalogues the same data twice, as two productIds of one orbit and frame that start
+  together. Both are listed under one code, so a search shows each exact granule (a paper may cite either). In the listing
+  built from the 2026-11-25 catalogue 3,925 codes are shared: 3,923 by two records and 2 by three, most of them ERS-1 regular
+  scenes (2,338).
+- **Which one a download takes:** for a shared code, the record with the earliest begin; on a tie, the smaller productId.
+
+### Footprints
+
+A footprint is the ground outline of the scene's product between the swath's near and far slant ranges, predicted from the
+orbit:
+- **Window:** ESA's processing window of the product, [begin - 1.5 s, end + 2.5 s]. ESA processes each IMS product from 1.5 s
+  before the catalogue's begin to 2.5 s after its end, so the product is about 19 s long, not the catalogue's 15.09 s, and its
+  footprint overlaps the next frame's. Measured on the headers of 397 products read in 2026-11:
+  - the product's SENSING_START and SENSING_STOP are begin - 1.5 s and end + 2.5 s exactly in 151 of 347 Envisat and 12 of 50
+    ERS products (within 2 ms); the others start later or stop earlier, apart from 18 ERS products that stop 2 to 8 ms after
+    end + 2.5 s;
+  - the product's lines lie inside the window in 319 of 347 Envisat and 32 of 50 ERS products; the others reach at most
+    0.22 s (Envisat) and 1.77 s (ERS-2, the gyroscope years) beyond it, at most 1.5 km and 12 km on the ground.
+- **Slant ranges:** the look angles of the swath (`look.csv`, below) at the middle of the window.
+- **Ground points:** the zero-Doppler points on the terrain: Copernicus GLO-90 heights at 360 m plus the EGM2008 geoid.
+- **Sampling:** the edges are sampled densely only where the terrain can move them, which is in relief; over sea and flat land a
+  few points describe them. Each edge starts with a point every 2 km. An interval is halved while the terrain heights of its
+  band could move the edge by more than 300 m, never below a step of 180 m. Layover spikes narrower than 180 m (single summits
+  seen at near range) are not represented. They are out of any processing's scope.
+- **Simplification:** Douglas-Peucker to 400 m, never widened. The stored outline lies within 500 m of the predicted one, apart
+  from the narrow layover spikes above, and holds no search margin beyond ESA's processing window.
+- **Storage:** vertices with 4 decimals. A footprint that crosses 180 degrees is stored in 0..360 (see Across 180 degrees).
+
+### The look angles (`<MISSION>/scenes/look.csv`)
+
+- **Source:** the near and far look angles of each swath, measured from the headers of real products read through ESA's
+  dissemination service in 2026-11: 437 Envisat and 445 ERS products read, 418 and 363 of them in the rows (`n`). The others
+  have no measured look angle, lie in a skipped phase, or have a shifted echo window (the ERS-2 anomaly, below).
+- **Rows:**
+  - Envisat: per swath and mission phase. The orbit lowering of 2010-10-22..27 changed every swath's pulse and echo window
+    between orbits 45185 and 45274, which is phase 2 against phase 3.
+  - ERS: one IS2 row per satellite, from the normal products. The ERS-2 products of ESA's on-board sampling-window anomaly
+    (2007-10 .. 2008-11-24) are left out of the rows. Their swaths can lie tens of kilometres off, and their footprints here
+    are the normal prediction.
+- **Rounding:** each edge is the measured extreme, widened by its leave-one-out margin and rounded outward to 0.01 degree.
+- **Columns:** `swath, phases, look_near, look_far, margin_near, margin_far, n, first, last`.
+
+### Layout and file formats
+
+```
+ENVISAT/  ERS1/  ERS2/
+  scenes/
+    look.csv                          the look angles (above)
+    tiles.csv                         every tile file of the mission with its row count
+    tiles/<tile>.csv                  5 x 5 degree tiles, named by the south-west corner (N40E010, S20W180)
+    tracks/<track>/<band>.csv         a track's scenes (track as in the code), bands of 180 frames: 180 x (frame // 180)
+```
+
+**Track band files** (the band start written with 4 digits, as `0720.csv`; rows sorted by begin, then code):
+
+| Column | Meaning |
+|---|---|
+| `code` | the scene's name (above) |
+| `productId` | ESA's product identifier: the product request |
+| `kind` | `regular`, `offgrid` or `extra` |
+| `phase` | the mission phase |
+| `orbit` | the absolute orbit that holds the scene's centre (after a node crossing) |
+| `direction` | `A` or `D` |
+| `begin`, `end` | the acquisition, UTC, `YYYY-MM-DDTHH:MM:SS.mmmZ` |
+| `node_ms` | the code start a (above), ms |
+| `esa_frame` | ESA's frame label, as given |
+| `bperp` | ESA's perpendicular baseline, m, as given (empty when the record has none) |
+| `doppler` | ESA's Doppler frequency, Hz, as given (empty when the record has none) |
+| `footprint` | the outline, `lat lon lat lon ...` |
+
+**Tile files** (one row per granule: a track, slot, swath and direction; sorted by those):
+
+| Column | Meaning |
+|---|---|
+| `track`, `frame`, `swath`, `direction` | the granule |
+| `scenes`, `first`, `last` | its scene count and its first and last date (`YYYYMMDD`) |
+| `outline` | the convex hull of its scenes' footprints, 2 decimals, containing the exact hull |
+
+A granule is listed in every tile its outline meets. A search reads the tiles its area of interest touches, then the band files
+of the granules found, and keeps the rows whose footprint meets the area.
+
+### Across 180 degrees
+
+- An area of interest is in -180..180, or in 0..360 when it crosses 180.
+- A footprint or outline that crosses 180 is stored in 0..360; every other one is stored in -180..180. A stored longitude above
+  180 therefore marks a crossing polygon.
+- A granule whose outline crosses 180 is listed in the tiles of both sides.
+
+### What a row does not promise
+
+- **That ESA serves the product.** ESA withdraws products whose raw data it cannot process. Their requests answer with an error,
+  and `ESA.download` reports them in one line.
+- **That the scene lies exactly on its footprint.** The footprint is the orbit's prediction with the normal look angles. An ERS-2
+  scene of the sampling-window anomaly (2007-10 .. 2008-11-24) can lie off it. `ESA.download` crops every scene by the times and
+  ranges of its own product header, so the crop is exact either way.
+
+### Rebuild
+
+```bash
+python3.13 build_scenes.py CACHE_DIR --harvest              # ESA's catalogue into CACHE_DIR/socat/ (resumable)
+python3.13 build_scenes.py CACHE_DIR --stage all --jobs 8   # rows, footprints, tree
+python3.13 plots.py                                         # the figures of both parts into docs/
+```
+
+- **Stages:** `rows` (catalogue, positions, names), `footprints` and `tree` can run on their own.
+- **Footprint cache:** a footprint is stored in `CACHE_DIR/footprints/` under a key of everything it depends on (the scene's
+  productId and span, swath, look row, the orbit files used, and the DEM). A rebuild computes only the footprints whose key is
+  new.
+- **Heights:** the DEM tiles are cached in `CACHE_DIR/heights/`.
+- **Determinism:** the output does not depend on `--jobs`, and the same catalogue gives the same bytes. A rebuild writes only
+  the files that change and removes the ones it no longer produces, so `git diff` shows the catalogue's changes.
+- **Figures:** `plots.py` (Python 3.13 with numpy, matplotlib and shapely) reads only the repository and redraws every figure of
+  this README into `docs/`, after a run of either build. The land of the maps is `docs/land_cells.csv`, the 1-degree cells of
+  the Copernicus GLO-90 tiles, listed once from the public bucket `copernicus-dem-90m` and committed, so the figures need no
+  network. The same data give the same bytes on one matplotlib version.
+
+### Figures
+
+Rows, codes, granules and tile files per mission (`kind` of the track rows; a row is a record, a code is shared by the
+records of one scene; a granule is a track, slot, swath and direction):
+
+| Mission | regular | off-grid | extra | rows | codes | granules | tiles |
+|---|---|---|---|---|---|---|---|
+| Envisat | 668,433 | 203,435 | 0 | 871,868 | 871,750 | 103,904 | 1,874 |
+| ERS-1 | 428,051 | 0 | 176,825 | 604,876 | 601,927 | 82,959 | 1,805 |
+| ERS-2 | 1,216,238 | 0 | 383,528 | 1,599,766 | 1,598,906 | 93,074 | 1,829 |
+
+A stack is the scenes of one track, swath, polarisation and direction; the maps count its dates per 1-degree cell, the
+histograms per slot. On the maps a footprint across 180 degrees is counted on both sides, the classes are the same on every map,
+and the land is grey with its outline.
+
+![Envisat coverage](docs/envisat_coverage.png)
+
+`docs/envisat_coverage.png`: for every 1-degree cell, the most dates of one Envisat stack whose scene footprints meet the cell.
+
+![ERS-1 coverage](docs/ers1_coverage.png)
+
+`docs/ers1_coverage.png`: for every 1-degree cell, the most dates of one ERS-1 stack whose scene footprints meet the cell.
+
+![ERS-2 coverage](docs/ers2_coverage.png)
+
+`docs/ers2_coverage.png`: for every 1-degree cell, the most dates of one ERS-2 stack whose scene footprints meet the cell.
+
+![Envisat scenes per year](docs/envisat_scenes_per_year.png)
+
+`docs/envisat_scenes_per_year.png`: the Envisat scenes per calendar year of their date, phase 2 (35-day) and phase 3 (30-day).
+
+![ERS-1 scenes per year](docs/ers1_scenes_per_year.png)
+
+`docs/ers1_scenes_per_year.png`: the ERS-1 scenes per calendar year of their date, the 35-day phases (C, G) and the 3-day
+phases (A, B, D).
+
+![ERS-2 scenes per year](docs/ers2_scenes_per_year.png)
+
+`docs/ers2_scenes_per_year.png`: the ERS-2 scenes per calendar year of their date, phase A (35-day) and phase B (3-day).
+
+![Envisat dates per stack](docs/envisat_dates_per_stack.png)
+
+`docs/envisat_dates_per_stack.png`: the number of Envisat stacks (track, swath, polarisation, direction, slot) by their
+number of dates, log scale.
+
+![ERS-1 dates per stack](docs/ers1_dates_per_stack.png)
+
+`docs/ers1_dates_per_stack.png`: the number of ERS-1 stacks (track, swath, polarisation, direction, slot) by their number of
+dates, log scale.
+
+![ERS-2 dates per stack](docs/ers2_dates_per_stack.png)
+
+`docs/ers2_dates_per_stack.png`: the number of ERS-2 stacks (track, swath, polarisation, direction, slot) by their number of
+dates, log scale.
 
 ## Sources and Attribution
 
@@ -522,6 +772,14 @@ The repository is about 1.13 GB in 17,933 files (ERS1 0.27 GB, ERS2 0.59 GB, ENV
     [doi:10.5067/DORIS/DORIS_IDSORB_001](https://doi.org/10.5067/DORIS/DORIS_IDSORB_001)). The DORIS results used here are
     acknowledged to the International DORIS Service (IDS), as its citation page (<https://ids-doris.org/citation.html>) asks:
     IDS, Willis et al. (2015), IAG Symposia 143, 631-639, [doi:10.1007/1345_2015_164](https://doi.org/10.1007/1345_2015_164).
+- **The scene index.**
+  - **Catalogue:** ESA's SAR Online Dissemination catalogue SO-Cat (public search), collections `ASA_IMS_1P` and `SAR_IMS_1P`.
+    The index holds ESA's product identifiers and catalogue fields as given (`productId`, `esa_frame`, `bperp`, `doppler`,
+    phase, orbit, direction, acquisition times) and values derived from them and from the orbits of this repository.
+  - **Heights:** Copernicus DEM GLO-90. The footprints were produced using Copernicus WorldDEM-90 © DLR e.V. 2010-2014 and
+    © Airbus Defence and Space GmbH 2014-2018, provided under COPERNICUS by the European Union and ESA; all rights reserved.
+  - **Geoid:** EGM2008, of the U.S. National Geospatial-Intelligence Agency.
+  - **Look angles:** measured on product headers delivered by ESA's (A)SAR Online Dissemination service.
 - **Terms.** The orbit files remain the work of their producers and are redistributed unchanged, as published on these public
   servers. The scripts of this repository are under the [LICENSE](LICENSE) (BSD 3-Clause).
 - **Serving.** The files are also served at `https://ersorbits.insar.dev/<path>` (a cache in front of this repository), e.g.
